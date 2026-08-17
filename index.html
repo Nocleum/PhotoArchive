@@ -1244,7 +1244,7 @@ logs:{},
 settings:{title:"Settings",tabView:"View",tabOps:"Operations",tabDup:"Duplicates",tabData:"Data",language:"Language",languageSub:"Interface language; more can be imported from JSON",importLang:"Import translation",importLangSub:"Load a locale JSON file",importBtn:"Import…",exportTpl:"Export template",theme:"Theme",themeSub:"Dark or light",dark:"Dark",light:"Light",tileSize:"Thumbnail size",defSort:"Default sorting",palHover:"Palette panel on hover",palHoverSub:"Open the palette panel when the cursor touches the right screen edge",trash:"Trash",trashSub:"Deleting moves files into the _trash folder instead of permanent removal",autoNext:"Auto-advance in viewer",autoNextSub:"Automatically show the next photo after an operation",moveMode:"Move method",moveModeSub:"“Move” is a fast system operation. “Copy + delete” is the universal fallback",moveNative:"Move (native)",moveCopyDel:"Copy + delete",parallel:"Move parallelism",parallelSub:"Batch size for moving and deleting",defAlgo:"Default algorithm",algoHist:"Histogram",algoPoints:"Feature points",defThr:"Default threshold",logLimit:"Log entry limit",logLimitSub:"How many operations to keep (default 100)",export:"Export settings",exportSub:"Settings as a JSON file",exportBtn:"Export",import:"Import settings",importSub:"Load a previously saved JSON",importBtn2:"Import…",clearThumbs:"Clear preview cache",clearThumbsSub:"Thumbnails (IndexedDB)",clearLum:"Reset filter cache",clearLumSub:"Computed brightness values",clearSig:"Clear signature cache",clearSigSub:"Similar-duplicate and palette signatures",reset:"Reset settings",
 msgExported:"Settings exported",msgImported:"Settings imported",msgImportErr:"Import error: {err}",msgCacheT:"Clear preview cache?",msgCacheB:"All saved thumbnails will be removed from IndexedDB.",msgCacheDone:"Preview cache cleared",msgLumT:"Reset filter cache?",msgLumB:"Computed brightness values will be deleted.",msgLumDone:"Filter cache reset",msgSigT:"Clear signature cache?",msgSigB:"Similar-duplicate and palette signatures will be recomputed.",msgSigDone:"Signature cache cleared",msgResetT:"Reset settings?",msgResetB:"All settings will return to defaults.",msgResetDone:"Settings reset"},
 sort:{name:"Name",date:"Date",size:"Size",res:"Resolution"},
-bulk:{tab:"Compute",warn:"Computation can take a long time on large libraries. Do not close the tab until it finishes.",thumbs:"Previews",thumbsSub:"thumbnails for the grid and viewer",lum:"Brightness",lumSub:"“Brightness” filter, images only",dims:"Resolution",dimsSub:"“Aspect ratio” and “Size, px” filters",pal:"Palette signatures",palSub:"palette search, images only",dupDhash:"Duplicates: dHash",dupDhashSub:"gradient, 8×8 (64 bits)",dupAhash:"Duplicates: aHash",dupAhashSub:"average, 8×8 (64 bits)",dupPhash:"Duplicates: pHash",dupPhashSub:"DCT, fixed 64 bits",dupHist:"Duplicates: histogram",dupHistSub:"HSV, fixed 26 bins",dupPoints:"Duplicates: feature points",dupPointsSub:"128 points",modeMissing:"Missing only",modeMissingSub:"compute empty cache values",modeFull:"Full recomputation",modeFullSub:"clear selected caches and recompute",run:"Compute…",selectSomething:"Select what to compute",needFolder:"Open a folder first",busy:"Wait for the current operations to finish",confirmT:"Start computation?",confirmTFull:"Start full recomputation?",confirmFiles:"Files to process: {n}",confirmEst:"Estimated time: {time}",confirmFullNote:"Warning: selected caches will be cleared.",nothing:"Nothing to compute — everything is already cached",progress:"{task}: {done}/{total}",done:"Computation finished",cancelled:"Computation cancelled",errors:"Computation finished with {n} error(s)",timeSec:"≈ {n} sec",timeMin:"≈ {n} min",paramsNote:"Duplicate signatures are computed with base parameters (dHash/aHash 8×8, points — 128). Other parameters are computed on the fly during search."},
+bulk:{tab:"Compute",warn:"Computation can take a long time on large libraries. Do not close the tab until it finishes.",thumbs:"Previews",thumbsSub:"thumbnails for the grid and viewer",lum:"Brightness",lumSub:"“Brightness” filter, images only",dims:"Resolution",dimsSub:"“Aspect ratio” and “Size, px” filters",pal:"Palette signatures",palSub:"palette search, images only",dupDhash:"Duplicates: dHash",dupDhashSub:"gradient, 8×8 (64 bits)",dupAhash:"Duplicates: aHash",dupAhashSub:"average, 8×8 (64 bits)",dupPhash:"Duplicates: pHash",dupPhashSub:"DCT, fixed 64 bits",dupHist:"Duplicates: histogram",dupHistSub:"HSV, fixed 26 bins",dupPoints:"Duplicates: feature points",dupPointsSub:"128 points",modeMissing:"Missing only",modeMissingSub:"compute empty cache values",modeFull:"Full recomputation",modeFullSub:"clear selected caches and recompute",run:"Compute…",selectSomething:"Select what to compute",needFolder:"Open a folder first",busy:"Wait for the current operations to finish",confirmT:"Start computation?",confirmTFull:"Start full recomputation?",confirmFiles:"Files to process: {n}",confirmFullNote:"Warning: selected caches will be cleared.",nothing:"Nothing to compute — everything is already cached",progress:"{task}: {done}/{total}",done:"Computation finished",cancelled:"Computation cancelled",errors:"Computation finished with {n} error(s)",paramsNote:"Duplicate signatures are computed with base parameters (dHash/aHash 8×8, points — 128). Other parameters are computed on the fly during search."},
 msg:{folderOpened:"Folder “{name}” opened: {count} {files}",folderOpenFailed:"Could not open folder: {err}",noRecent:"Recent folder not found",accessDenied:"Access not granted",accessError:"Access error: {err}",folderReopened:"Folder “{name}” reopened",viewOnly:"View-only mode: {count} {files} (read-only)",refreshed:"Gallery refreshed: {count} {files}",refreshError:"Refresh error: {err}",changeFolderWait:"Wait for the current operations to finish",changeFolderT:"Change folder?",changeFolderB:"The queue has unfinished operations — they will be lost."},
 help:{modalTitle:"Help",hero:"local gallery manager · Chrome / Edge · files never leave your computer",aboutT:"About",aboutP:"<b>Photo Archive</b> runs directly in the browser via the File System Access API and requires no installation. All file changes go into a queue first and are executed only after confirmation.",cards:[["Gallery","File grid with filters, albums, selection and operations."],["Duplicates","Exact (SHA-256) and similar (5 algorithms) with side-by-side comparison."],["Palette","Pick photos by color composition — from a sample photo or manually."],["Queue & plan","Execution with pause, cancel and an operation log."]],palT:"Palette search",palP:"Open the palette panel with <kbd>M</kbd> or the tab button at the right screen edge (in the gallery). Two ways to make a query: <b>“From photo”</b> — click any shot in the gallery; <b>“Manual”</b> — set colors and their shares. The palette works as a filter on top of the other gallery filters and sorts the result by similarity; the similarity percentage is shown in the top-left corner of tiles. Successful queries can be saved as presets. In Settings (View) you can enable opening the panel by hovering the right edge; in that mode a “pin” button appears so the panel stays open when the cursor leaves.",hkGalT:"Hotkeys — Gallery",hkGal:[[["Ctrl","A"],"Select all visible files"],[["Shift"],"click — range selection"],[["Delete"],"Queue selected for deletion"],[["M"],"Palette panel"],[["1","–","9"],"Quick-move selection to an album"],[["0"],"Move selection to root"],[["R"],"Refresh gallery from disk"],[["/"],"Focus search"],[["Ctrl","Z"],"Undo last queue step"],[["Esc"],"Clear selection / close panels"]],hkViewT:"Hotkeys — Viewer",hkView:[[["←","→"],"Previous / next file"],[["Delete"]," / ",["↑"],"Delete current file (to queue)"],[["1","–","9"],["0"],"Quick move to album / root"],[["Mouse wheel"],"Zoom at cursor"],[["+","−"],"Zoom from center"],[["Double click"],"Zoom / reset zoom"],[["Click name"],"Rename (Enter — to queue, Esc — cancel)"],[["Esc"],"Close viewer"]],hkDupT:"Hotkeys — Duplicates",hkDup:[[["←","→"],"Files within a group"],[["↑","↓"],"Switch groups"],[["C"],"Comparison mode (two photos side by side)"],[["Esc"],"Close viewer"]],cmpNote:"Clicking a photo in a group automatically enables comparison. In comparison mode the ◀ ▶ buttons browse files, zoom is synchronized for both photos.",queueT:"Queue & execution plan",queueP:"All actions go into the queue. The plan panel in the sidebar shows operations and execution progress. While running, pause, resume and cancel are available.",filtersT:"Filters & presets",filtersP:"“Filters ▾” — advanced filters: type, aspect ratio, brightness, resolution. “Presets” save a combination of filters. Pinned presets appear in a separate panel.",albumsT:"Albums",albumsP:"Albums are subfolders of the root directory. “＋ New album…” creates an album (clicking the arrow creates it and immediately moves the selected files). “Manage albums”: create, rename, disable, delete.",setT:"Settings & caching",setItems:[["Move method","“Move (native)” or “Copy + delete”."],["Move parallelism","batch size (4–32)."],["Trash","deletion moves files into the _trash subfolder."],["Data","clear caches, export/import settings."]]},
 p:{files:{one:"file",other:"files"},ops:{one:"operation",other:"operations"},records:{one:"entry",other:"entries"},groups:{one:"group",other:"groups"},images:{one:"image",other:"images"},bits:{one:"bit",other:"bits"},points:{one:"point",other:"points"},albums:{one:"album",other:"albums"}}
@@ -1282,7 +1282,7 @@ pal:{title:"Палитра",tabTt:"Палитра (M)",pinTt:"Закрепить
 settings:{title:"Настройки",tabView:"Вид",tabOps:"Операции",tabDup:"Дубликаты",tabData:"Данные",language:"Язык",languageSub:"Язык интерфейса; другие можно импортировать из JSON",importLang:"Импорт перевода",importLangSub:"Загрузить JSON-файл локали",importBtn:"Импорт…",exportTpl:"Экспорт шаблона",theme:"Тема",themeSub:"Тёмная или светлая",dark:"Тёмная",light:"Светлая",tileSize:"Размер миниатюр",defSort:"Сортировка по умолчанию",palHover:"Панель палитры по наведению",palHoverSub:"Открывать панель палитры при наведении курсора на правый край экрана",trash:"Корзина",trashSub:"Удаление переносит файлы в папку _trash вместо безвозвратного удаления",autoNext:"Автопереход в просмотре",autoNextSub:"После операции автоматически показывать следующее фото",moveMode:"Способ переноса",moveModeSub:"«Перемещение» — быстрая системная операция. «Копирование + удаление» — универсальный способ",moveNative:"Перемещение (move)",moveCopyDel:"Копирование + удаление",parallel:"Параллельность переноса",parallelSub:"Размер батча при переносе и удалении",defAlgo:"Алгоритм по умолчанию",algoHist:"Гистограмма",algoPoints:"Опорные точки",defThr:"Порог по умолчанию",logLimit:"Лимит записей в журнале",logLimitSub:"Сколько операций хранить (по умолчанию 100)",export:"Экспорт настроек",exportSub:"Настройки в JSON-файл",exportBtn:"Экспорт",import:"Импорт настроек",importSub:"Загрузить ранее сохранённый JSON",importBtn2:"Импорт…",clearThumbs:"Очистить кэш превью",clearThumbsSub:"Миниатюры (IndexedDB)",clearLum:"Сбросить кэш фильтров",clearLumSub:"Рассчитанные значения яркости",clearSig:"Очистить кэш сигнатур",clearSigSub:"Сигнатуры похожих дубликатов и палитры",reset:"Сбросить настройки",
 msgExported:"Настройки экспортированы",msgImported:"Настройки импортированы",msgImportErr:"Ошибка импорта: {err}",msgCacheT:"Очистить кэш превью?",msgCacheB:"Все сохранённые миниатюры будут удалены из IndexedDB.",msgCacheDone:"Кэш превью очищен",msgLumT:"Сбросить кэш фильтров?",msgLumB:"Рассчитанные значения яркости будут удалены.",msgLumDone:"Кэш фильтров сброшен",msgSigT:"Очистить кэш сигнатур?",msgSigB:"Сигнатуры похожих дубликатов и палитры будут рассчитываться заново.",msgSigDone:"Кэш сигнатур очищен",msgResetT:"Сбросить настройки?",msgResetB:"Все настройки вернутся к значениям по умолчанию.",msgResetDone:"Настройки сброшены"},
 sort:{name:"Имя",date:"Дата",size:"Размер",res:"Разрешение"},
-bulk:{tab:"Расчёт",warn:"Расчёт может занять много времени при большом числе файлов. Не закрывайте вкладку до завершения.",thumbs:"Превью",thumbsSub:"миниатюры для сетки и просмотра",lum:"Яркость",lumSub:"фильтр «Яркость», только фото",dims:"Разрешение",dimsSub:"фильтры «Форма кадра» и «Размер, px»",pal:"Сигнатуры палитры",palSub:"поиск по палитре, только фото",dupDhash:"Дубликаты: dHash",dupDhashSub:"градиентный, 8×8 (64 бита)",dupAhash:"Дубликаты: aHash",dupAhashSub:"средний, 8×8 (64 бита)",dupPhash:"Дубликаты: pHash",dupPhashSub:"DCT, фикс. 64 бита",dupHist:"Дубликаты: гистограмма",dupHistSub:"HSV, фикс. 26 бинов",dupPoints:"Дубликаты: опорные точки",dupPointsSub:"128 точек",modeMissing:"Только отсутствующие",modeMissingSub:"дорасчитать пустые значения в кеше",modeFull:"Полный перерасчёт",modeFullSub:"очистить выбранные кеши и посчитать заново",run:"Рассчитать…",selectSomething:"Отметьте, что нужно рассчитать",needFolder:"Сначала откройте папку",busy:"Дождитесь завершения выполнения операций",confirmT:"Начать расчёт?",confirmTFull:"Начать полный перерасчёт?",confirmFiles:"Файлов к обработке: {n}",confirmEst:"Оценка времени: {time}",confirmFullNote:"Внимание: выбранные кеши будут очищены.",nothing:"Нечего рассчитывать — всё уже посчитано",progress:"{task}: {done}/{total}",done:"Расчёт завершён",cancelled:"Расчёт отменён",errors:"Расчёт завершён с ошибками: {n}",timeSec:"≈ {n} с",timeMin:"≈ {n} мин",paramsNote:"Сигнатуры дубликатов считаются с базовыми параметрами (dHash/aHash 8×8, точки — 128). Другие параметры рассчитываются на лету при поиске."},
+bulk:{tab:"Расчёт",warn:"Расчёт может занять много времени при большом числе файлов. Не закрывайте вкладку до завершения.",thumbs:"Превью",thumbsSub:"миниатюры для сетки и просмотра",lum:"Яркость",lumSub:"фильтр «Яркость», только фото",dims:"Разрешение",dimsSub:"фильтры «Форма кадра» и «Размер, px»",pal:"Сигнатуры палитры",palSub:"поиск по палитре, только фото",dupDhash:"Дубликаты: dHash",dupDhashSub:"градиентный, 8×8 (64 бита)",dupAhash:"Дубликаты: aHash",dupAhashSub:"средний, 8×8 (64 бита)",dupPhash:"Дубликаты: pHash",dupPhashSub:"DCT, фикс. 64 бита",dupHist:"Дубликаты: гистограмма",dupHistSub:"HSV, фикс. 26 бинов",dupPoints:"Дубликаты: опорные точки",dupPointsSub:"128 точек",modeMissing:"Только отсутствующие",modeMissingSub:"дорасчитать пустые значения в кеше",modeFull:"Полный перерасчёт",modeFullSub:"очистить выбранные кеши и посчитать заново",run:"Рассчитать…",selectSomething:"Отметьте, что нужно рассчитать",needFolder:"Сначала откройте папку",busy:"Дождитесь завершения выполнения операций",confirmT:"Начать расчёт?",confirmTFull:"Начать полный перерасчёт?",confirmFiles:"Файлов к обработке: {n}",confirmFullNote:"Внимание: выбранные кеши будут очищены.",nothing:"Нечего рассчитывать — всё уже посчитано",progress:"{task}: {done}/{total}",done:"Расчёт завершён",cancelled:"Расчёт отменён",errors:"Расчёт завершён с ошибками: {n}",paramsNote:"Сигнатуры дубликатов считаются с базовыми параметрами (dHash/aHash 8×8, точки — 128). Другие параметры рассчитываются на лету при поиске."},
 msg:{folderOpened:"Папка «{name}» открыта: {count} {files}",folderOpenFailed:"Не удалось открыть папку: {err}",noRecent:"Недавняя папка не найдена",accessDenied:"Доступ не разрешён",accessError:"Ошибка доступа: {err}",folderReopened:"Папка «{name}» открыта повторно",viewOnly:"Режим просмотра: {count} {files} (без изменений)",refreshed:"Галерея обновлена: {count} {files}",refreshError:"Ошибка обновления: {err}",changeFolderWait:"Дождитесь завершения выполнения операций",changeFolderT:"Сменить папку?",changeFolderB:"В очереди есть невыполненные операции — они будут потеряны."},
 help:{modalTitle:"Справка",hero:"локальный менеджер галереи · Chrome / Edge · файлы не покидают компьютер",aboutT:"О программе",aboutP:"<b>«Фотоархив»</b> работает прямо в браузере через File System Access API и не требует установки. Все изменения файлов сначала попадают в очередь и выполняются только после подтверждения.",cards:[["Галерея","Сетка файлов с фильтрами, альбомами, выделением и операциями."],["Дубликаты","Точные (SHA-256) и похожие (5 алгоритмов) с сравнением бок о бок."],["Палитра","Подбор фото по цветовому соотношению — из фото-образца или вручную."],["Очередь и план","Выполнение с паузой, отменой и журналом операций."]],palT:"Поиск по палитре",palP:"Откройте панель палитры клавишей <kbd>M</kbd> или кнопкой-язычком у правого края экрана (в галерее). Запрос двумя способами: <b>«Из фото»</b> — кликните по любому снимку в галерее; <b>«Вручную»</b> — задайте цвета и их доли. Палитра работает как фильтр поверх остальных фильтров галереи и сортирует результат по похожести; процент похожести показывается в левом верхнем углу плиток. Удачные запросы сохраняются как пресеты. В настройках (Вид) включается открытие панели наведением на правый край; в этом режиме появляется кнопка «закрепить», чтобы панель не закрывалась при уходе курсора.",hkGalT:"Горячие клавиши — Галерея",hkGal:[[["Ctrl","A"],"Выделить все видимые файлы"],[["Shift"],"клик — выделение диапазона"],[["Delete"],"Выделенные — в очередь на удаление"],[["M"],"Панель палитры"],[["1","–","9"],"Быстрый перенос выделения в альбом"],[["0"],"Перенос выделения в корень"],[["R"],"Обновить галерею с диска"],[["/"],"Фокус на поиск"],[["Ctrl","Z"],"Отменить последний шаг очереди"],[["Esc"],"Снять выделение / закрыть панели"]],hkViewT:"Горячие клавиши — Просмотр",hkView:[[["←","→"],"Предыдущий / следующий файл"],[["Delete"]," / ",["↑"],"Удалить текущий файл (в очередь)"],[["1","–","9"],["0"],"Быстрый перенос в альбом / корень"],[["Колесо мыши"],"Зум от курсора"],[["+","−"],"Зум от центра"],[["Двойной клик"],"Зум / сброс зума"],[["Клик по имени"],"Переименовать (Enter — в очередь, Esc — отмена)"],[["Esc"],"Закрыть просмотр"]],hkDupT:"Горячие клавиши — Дубликаты",hkDup:[[["←","→"],"Файлы в группе"],[["↑","↓"],"Переключение групп"],[["C"],"Режим сравнения (два фото рядом)"],[["Esc"],"Закрыть просмотр"]],cmpNote:"При клике на фото в группе сравнение включается автоматически. В режиме сравнения кнопки ◀ ▶ листают файлы, зум синхронен для обоих фото.",queueT:"Очередь и план выполнения",queueP:"Все действия попадают в очередь. Панель плана в сайдбаре показывает операции и ход выполнения. Во время выполнения доступны пауза, продолжение и отмена.",filtersT:"Фильтры и пресеты",filtersP:"«Фильтры ▾» — расширенные фильтры: тип, форма кадра, яркость, разрешение. «Пресеты» сохраняют комбинацию фильтров. Закреплённые пресеты выводятся отдельной панелью.",albumsT:"Альбомы",albumsP:"Альбомы — подпапки корневой директории. Пункт «＋ Новый альбом…» создаёт альбом (клик по стрелке — создаёт и сразу переносит выделенные файлы). «Управление альбомами»: создание, переименование, отключение, удаление.",setT:"Настройки и кеширование",setItems:[["Способ переноса","«Перемещение (move)» или «Копирование + удаление»."],["Параллельность переноса","размер батча (4–32)."],["Корзина","удаление в подпапку _trash."],["Данные","очистка кешей, экспорт/импорт настроек."]]},
 p:{files:{one:"файл",few:"файла",many:"файлов",other:"файлов"},ops:{one:"операция",few:"операции",many:"операций",other:"операций"},records:{one:"запись",few:"записи",many:"записей",other:"записей"},groups:{one:"группа",few:"группы",many:"групп",other:"групп"},images:{one:"изображение",few:"изображения",many:"изображений",other:"изображений"},bits:{one:"бит",few:"бита",many:"бит",other:"бита"},points:{one:"точка",few:"точки",many:"точек",other:"точек"},albums:{one:"альбом",few:"альбома",many:"альбомов",other:"альбомов"}}
@@ -2322,18 +2322,7 @@ if(v!=null){f.lum=v;loaded++;}
 }
 return loaded;
 }
-async function ensureThumb(it){
-if(it.thumbUrl)return it.thumbUrl;
-const key=thumbKey(it);
-const cached=await IDB.get("thumbs",key);
-if(cached){
-it.thumbUrl=URL.createObjectURL(cached);
-IDB.get("dims",key).then(v=>{
-if(v&&v.w>0){it.width=v.w;it.height=v.h;it.duration=v.dur||0;updateTileDims(it);}
-});
-return it.thumbUrl;
-}
-return poolRun(async()=>{
+async function computeThumb(it){
 if(it.thumbUrl)return it.thumbUrl;
 const f=await getFileObj(it);
 let blob=null;
@@ -2352,6 +2341,7 @@ try{
 const v=document.createElement("video");
 v.muted=true;v.preload="metadata";v.src=url;
 await once(v,"loadeddata");
+it.width=v.videoWidth;v.height=v.videoHeight;
 it.width=v.videoWidth;it.height=v.videoHeight;it.duration=v.duration||0;
 saveDims(it);
 v.currentTime=Math.min(.6,(v.duration||1)/2);
@@ -2363,10 +2353,22 @@ c.getContext("2d").drawImage(v,0,0,c.width,c.height);
 blob=await new Promise(r=>c.toBlob(r,"image/jpeg",.72));
 }finally{URL.revokeObjectURL(url);}
 }
-if(blob){IDB.put("thumbs",key,blob);it.thumbUrl=URL.createObjectURL(blob);}
+if(blob){IDB.put("thumbs",thumbKey(it),blob);it.thumbUrl=URL.createObjectURL(blob);}
 updateTileDims(it);
 return it.thumbUrl;
+}
+async function ensureThumb(it){
+if(it.thumbUrl)return it.thumbUrl;
+const key=thumbKey(it);
+const cached=await IDB.get("thumbs",key);
+if(cached){
+it.thumbUrl=URL.createObjectURL(cached);
+IDB.get("dims",key).then(v=>{
+if(v&&v.w>0){it.width=v.w;it.height=v.h;it.duration=v.dur||0;updateTileDims(it);}
 });
+return it.thumbUrl;
+}
+return poolRun(()=>computeThumb(it));
 }
 function fmtDur(s){const m=Math.floor(s/60);return m+":"+String(Math.floor(s%60)).padStart(2,"0");}
 let dimsToken=0;
@@ -4951,18 +4953,17 @@ setTimeout(()=>URL.revokeObjectURL(a.href),2000);
 };
 /* ===== 23. PACKAGE COMPUTATIONS ===== */
 const BULK_TASKS=[
-{key:"thumbs",lk:"bulk.thumbs",est:.3},
-{key:"lum",lk:"bulk.lum",est:.05},
-{key:"dims",lk:"bulk.dims",est:.15},
-{key:"pal",lk:"bulk.pal",est:.15},
-{key:"dup-dhash",lk:"bulk.dupDhash",algo:"dhash",N:8,est:.15},
-{key:"dup-ahash",lk:"bulk.dupAhash",algo:"ahash",N:8,est:.15},
-{key:"dup-phash",lk:"bulk.dupPhash",algo:"phash",N:64,est:.2},
-{key:"dup-hist",lk:"bulk.dupHist",algo:"hist",N:26,est:.15},
-{key:"dup-points",lk:"bulk.dupPoints",algo:"points",N:128,est:.25},
+{key:"thumbs",lk:"bulk.thumbs"},
+{key:"lum",lk:"bulk.lum"},
+{key:"dims",lk:"bulk.dims"},
+{key:"pal",lk:"bulk.pal"},
+{key:"dup-dhash",lk:"bulk.dupDhash",algo:"dhash",N:8},
+{key:"dup-ahash",lk:"bulk.dupAhash",algo:"ahash",N:8},
+{key:"dup-phash",lk:"bulk.dupPhash",algo:"phash",N:64},
+{key:"dup-hist",lk:"bulk.dupHist",algo:"hist",N:26},
+{key:"dup-points",lk:"bulk.dupPoints",algo:"points",N:128},
 ];
 const bulkState={active:false,cancel:false};
-
 async function buildBulkPlan(keys,full){
 const all=[...S.files.values()];
 const imgs=all.filter(f=>f.kind==="image");
@@ -4984,7 +4985,6 @@ if(items.length)plan.push({def:td,items});
 }
 return plan;
 }
-
 async function bulkClear(keys){
 if(keys.has("thumbs")){IDB.clear("thumbs");
 for(const f of S.files.values()){if(f.thumbUrl)URL.revokeObjectURL(f.thumbUrl);f.thumbUrl=null;}}
@@ -4999,10 +4999,15 @@ if(td.algo&&keys.has(td.key)&&k.includes("|"+td.algo+"|")){IDB.del("sigs",k);bre
 }
 }
 }
-
 async function bulkCalcOne(td,f){
 try{
-if(td.key==="thumbs"){await ensureThumb(f);return !!f.thumbUrl;}
+if(td.key==="thumbs"){
+if(f.thumbUrl)return true;
+const cached=await IDB.get("thumbs",thumbKey(f));
+if(cached){f.thumbUrl=URL.createObjectURL(cached);return true;}
+await computeThumb(f);
+return !!f.thumbUrl;
+}
 if(td.key==="lum"){
 const key=thumbKey(f);
 const c=await IDB.get("lum",key);
@@ -5047,7 +5052,6 @@ IDB.put("sigs",key,sig);
 return true;
 }catch(e){return false;}
 }
-
 async function runBulkCalc(plan){
 bulkState.active=true;bulkState.cancel=false;
 $("#btnBulkRun").disabled=true;
@@ -5079,9 +5083,7 @@ if(bulkState.cancel)toast(t("bulk.cancelled"),"info");
 else if(errs)toast(t("bulk.errors",{n:errs}),"err");
 else toast(t("bulk.done"),"ok");
 }
-
 $("#btnBulkCancel").onclick=()=>{bulkState.cancel=true;};
-
 $("#btnBulkRun").onclick=async()=>{
 if(bulkState.active)return;
 if(!S.root){toast(t("bulk.needFolder"),"err");return;}
@@ -5092,11 +5094,8 @@ const full=document.querySelector('input[name=bulkMode]:checked').value==="full"
 const plan=await buildBulkPlan(keys,full);
 const total=plan.reduce((s,p)=>s+p.items.length,0);
 if(!total){toast(t("bulk.nothing"),"info");return;}
-const sec=plan.reduce((s,p)=>s+p.items.length*p.def.est,0);
-const time=sec<90?t("bulk.timeSec",{n:Math.max(1,Math.round(sec))}):t("bulk.timeMin",{n:Math.max(1,Math.round(sec/60))});
 const lines=[t("bulk.confirmFiles",{n:total}),
-...plan.map(p=>"· "+t(p.def.lk)+" — "+p.items.length),
-t("bulk.confirmEst",{time})];
+...plan.map(p=>"· "+t(p.def.lk)+" — "+p.items.length)];
 if(full)lines.push(t("bulk.confirmFullNote"));
 $("#cfText").style.whiteSpace="pre-line";
 const ok=await confirmDlg(full?t("bulk.confirmTFull"):t("bulk.confirmT"),lines.join("\n"));
