@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark light">
 <title>Photo Archive — Gallery Manager</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f0a83c' stroke-width='1.8'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 2 L15 12 M21.5 7.5 L12 12 M21.5 16.5 L15 12 M12 22 L9 12 M2.5 16.5 L12 12 M2.5 7.5 L9 12' opacity='.85'/%3E%3C/svg%3E">
 <style>
 :root{
 --tile:180px;
@@ -194,8 +195,13 @@ animation:fadeUp .25s both}
 .adv-title{font-size:10.5px;font-weight:800;letter-spacing:.13em;color:var(--faint);text-transform:uppercase;font-family:var(--font-mono)}
 .adv-count{font-size:10.5px;color:var(--accent);font-weight:700}
 .adv-body{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch}
-.adv-group{display:flex;flex-direction:column;gap:6px;padding:9px 12px;background:var(--panel-2);
+.adv-group{position:relative;display:flex;flex-direction:column;gap:6px;padding:9px 12px;background:var(--panel-2);
 border:1px solid var(--border);border-radius:var(--r-m);transition:border-color var(--tr),background var(--tr)}
+.adv-reset{position:absolute;top:5px;right:5px;width:18px;height:18px;border-radius:4px;display:none;
+align-items:center;justify-content:center;color:var(--faint);font-size:10px;line-height:1;
+border:1px solid transparent;transition:all var(--tr);padding:0}
+.adv-reset:hover{color:var(--danger);border-color:var(--danger);background:color-mix(in srgb,var(--danger) 10%,transparent)}
+.adv-group.active .adv-reset{display:flex}
 .adv-group.active{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,var(--panel-2))}
 .adv-lbl{font-size:9.5px;font-weight:800;color:var(--faint);letter-spacing:.06em;text-transform:uppercase}
 .adv-sublbl{font-size:11px;color:var(--faint);font-weight:700}
@@ -603,7 +609,7 @@ animation:tin .3s cubic-bezier(.3,1.3,.5,1);max-width:700px}
 <svg class="mark" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
 <circle cx="12" cy="12" r="10"/><path d="M12 2 L15 12 M21.5 7.5 L12 12 M21.5 16.5 L15 12 M12 22 L9 12 M2.5 16.5 L12 12 M2.5 7.5 L9 12" opacity=".85"/>
 </svg>
-<div><b data-i18n="brand.name">PHOTOARCHIVE</b><small data-i18n="brand.tag">file manager · v3.5</small></div>
+<div><b data-i18n="brand.name">PHOTOARCHIVE</b><small data-i18n="brand.tag">file manager · v3.6</small></div>
 </div>
 <div id="folderChip">
 <span class="mono" id="folderName"></span><span class="cnt" id="folderCnt"></span>
@@ -761,12 +767,14 @@ animation:tin .3s cubic-bezier(.3,1.3,.5,1);max-width:700px}
 <div class="adv-body">
 <div class="adv-group" data-adv-group="kind">
 <span class="adv-lbl" data-i18n="adv.kind">Type</span>
+<button class="adv-reset" data-adv-reset="kind" data-i18n-title="adv.resetTt" title="Reset this filter">✕</button>
 <select class="input sm" id="advKind">
 <option value="all" data-i18n="adv.kindAll">All</option><option value="image" data-i18n="adv.kindImage">Photos</option><option value="video" data-i18n="adv.kindVideo">Videos</option>
 </select>
 </div>
 <div class="adv-group" data-adv-group="shape">
 <span class="adv-lbl" data-i18n="adv.shape">Aspect ratio</span>
+<button class="adv-reset" data-adv-reset="shape" data-i18n-title="adv.resetTt" title="Reset this filter">✕</button>
 <div class="adv-inline">
 <select class="input sm" id="advShape">
 <option value="any" data-i18n="adv.shapeAny">Any</option><option value="1:1" data-i18n="adv.shapeSq">1:1 square</option><option value="4:3">4:3</option>
@@ -785,6 +793,7 @@ animation:tin .3s cubic-bezier(.3,1.3,.5,1);max-width:700px}
 </div>
 <div class="adv-group" data-adv-group="lum">
 <span class="adv-lbl" data-i18n="adv.lum">Brightness</span>
+<button class="adv-reset" data-adv-reset="lum" data-i18n-title="adv.resetTt" title="Reset this filter">✕</button>
 <div class="adv-inline">
 <input class="input sm" id="advLumMin" type="number" min="0" max="255" data-i18n-ph="adv.from" placeholder="min" style="width:58px">
 <span class="adv-dash">–</span>
@@ -793,6 +802,7 @@ animation:tin .3s cubic-bezier(.3,1.3,.5,1);max-width:700px}
 </div>
 <div class="adv-group" data-adv-group="res">
 <span class="adv-lbl" data-i18n="adv.res">Size, px</span>
+<button class="adv-reset" data-adv-reset="res" data-i18n-title="adv.resetTt" title="Reset this filter">✕</button>
 <div class="adv-inline">
 <span class="adv-sublbl" data-i18n="adv.w">W</span>
 <select class="input sm" id="advResWCmp"><option value="gte">≥</option><option value="lte">≤</option></select>
@@ -1006,6 +1016,7 @@ animation:tin .3s cubic-bezier(.3,1.3,.5,1);max-width:700px}
 <button data-st="view" class="on" data-i18n="settings.tabView">View</button>
 <button data-st="ops" data-i18n="settings.tabOps">Operations</button>
 <button data-st="dup" data-i18n="settings.tabDup">Duplicates</button>
+<button data-st="calc" data-i18n="bulk.tab">Compute</button>
 <button data-st="data" data-i18n="settings.tabData">Data</button>
 </div>
 <div class="m-body">
@@ -1061,6 +1072,33 @@ animation:tin .3s cubic-bezier(.3,1.3,.5,1);max-width:700px}
 <button class="btn small danger" id="btnSigClear" data-i18n="common.clear">Clear</button></div>
 <div class="set-row"><div><div class="lbl" data-i18n="settings.reset">Reset settings</div></div>
 <button class="btn small danger" id="btnSetReset" data-i18n="common.reset">Reset</button></div>
+</div>
+<div class="set-pane" data-pane="calc" style="display:none">
+<div class="h-note" style="margin:0 0 12px" data-i18n="bulk.warn">Расчёт может занять много времени при большом числе файлов. Не закрывайте вкладку до завершения.</div>
+<div style="display:flex;flex-direction:column;gap:6px">
+<label class="adio"><input type="checkbox" data-calctask="thumbs" checked><span><b data-i18n="bulk.thumbs">Превью</b> — <span data-i18n="bulk.thumbsSub">миниатюры для сетки и просмотра</span></span></label>
+<label class="adio"><input type="checkbox" data-calctask="lum"><span><b data-i18n="bulk.lum">Яркость</b> — <span data-i18n="bulk.lumSub">фильтр «Яркость», только фото</span></span></label>
+<label class="adio"><input type="checkbox" data-calctask="dims"><span><b data-i18n="bulk.dims">Разрешение</b> — <span data-i18n="bulk.dimsSub">фильтры «Форма кадра» и «Размер, px»</span></span></label>
+<label class="adio"><input type="checkbox" data-calctask="pal"><span><b data-i18n="bulk.pal">Сигнатуры палитры</b> — <span data-i18n="bulk.palSub">поиск по палитре, только фото</span></span></label>
+<label class="adio"><input type="checkbox" data-calctask="dup-dhash"><span><b data-i18n="bulk.dupDhash">Дубликаты: dHash</b> — <span data-i18n="bulk.dupDhashSub">градиентный, 8×8 (64 бита)</span></span></label>
+<label class="adio"><input type="checkbox" data-calctask="dup-ahash"><span><b data-i18n="bulk.dupAhash">Дубликаты: aHash</b> — <span data-i18n="bulk.dupAhashSub">средний, 8×8 (64 бита)</span></span></label>
+<label class="adio"><input type="checkbox" data-calctask="dup-phash"><span><b data-i18n="bulk.dupPhash">Дубликаты: pHash</b> — <span data-i18n="bulk.dupPhashSub">DCT, фикс. 64 бита</span></span></label>
+<label class="adio"><input type="checkbox" data-calctask="dup-hist"><span><b data-i18n="bulk.dupHist">Дубликаты: гистограмма</b> — <span data-i18n="bulk.dupHistSub">HSV, фикс. 26 бинов</span></span></label>
+<label class="adio"><input type="checkbox" data-calctask="dup-points"><span><b data-i18n="bulk.dupPoints">Дубликаты: опорные точки</b> — <span data-i18n="bulk.dupPointsSub">128 точек</span></span></label>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;margin-top:12px">
+<label class="adio"><input type="radio" name="bulkMode" value="missing" checked><span><b data-i18n="bulk.modeMissing">Только отсутствующие</b> — <span data-i18n="bulk.modeMissingSub">дорасчитать пустые значения в кеше</span></span></label>
+<label class="adio"><input type="radio" name="bulkMode" value="full"><span><b data-i18n="bulk.modeFull">Полный перерасчёт</b> — <span data-i18n="bulk.modeFullSub">очистить выбранные кеши и посчитать заново</span></span></label>
+</div>
+<div style="display:flex;gap:10px;margin-top:14px">
+<button class="btn primary" id="btnBulkRun" data-i18n="bulk.run">Рассчитать…</button>
+<button class="btn danger" id="btnBulkCancel" style="display:none" data-i18n="common.cancel">Отмена</button>
+</div>
+<div id="bulkProgWrap" style="display:none;margin-top:12px">
+<div class="prog"><i id="bulkProg"></i></div>
+<div class="mono" id="bulkProgTxt" style="font-size:10.5px;color:var(--muted);margin-top:6px"></div>
+</div>
+<p style="font-size:11px;color:var(--faint);margin-top:12px" data-i18n="bulk.paramsNote">Сигнатуры дубликатов считаются с базовыми параметрами (dHash/aHash 8×8, точки — 128). Другие параметры рассчитываются на лету при поиске.</p>
 </div>
 </div>
 </div></div>
@@ -1182,7 +1220,7 @@ tabs:{gallery:"Gallery",dupes:"Duplicates",logs:"Log"},
 topbar:{searchPh:"Search by name… ( / )",refreshTt:"Refresh gallery from disk (R)",undoTt:"Undo last step (Ctrl+Z)",themeTt:"Toggle theme",helpTt:"Help",settingsTt:"Settings",changeFolderTt:"Change folder",ro:"VIEW-ONLY MODE",folderCount:"{count} {files}"},
 welcome:{title1:"Photo",title2:"Archive",text:"Local gallery manager: sorting, albums, duplicate search. Every action goes into the queue first and runs only after your confirmation.",openFolder:"Choose folder",recent:"Open recent",fallback:"View-only mode…",recentPref:"Open recent: ",noteOk:"Chrome / Edge · your files never leave this computer<br>full write access: move, delete, trash",noteBad:"Your browser does not support writing to folders (Chrome/Edge required).<br>View-only mode is available via “View-only mode…”."},
 toolbar:{sortName:"Sort: name",sortDate:"Sort: date",sortSize:"Sort: size",sortRes:"Sort: resolution",dirTt:"Direction",sizeMinPh:"MB min",sizeMaxPh:"MB max",sizeMinTt:"Minimum file size, MB",sizeMaxTt:"Maximum file size, MB",filters:"Filters ▾",filtersTt:"Advanced filters",presets:"Presets",presetsTt:"Filter presets",pinsTt:"Pinned presets",resetAll:"Reset all",resetSel:"✕ Clear selection",shown:"Shown: {count} of {total}",shownPal:"Shown: {count} of {total} · palette"},
-adv:{title:"Advanced filters",active:"active: {n}",kind:"Type",kindAll:"All",kindImage:"Photos",kindVideo:"Videos",shape:"Aspect ratio",shapeAny:"Any",shapeSq:"1:1 square",shapeVert:"9:16 portrait",shapePano:"2:1 panorama",shapeCustom:"Custom…",cmpEq:"≈",cmpGt:"wider",cmpLt:"narrower",lum:"Brightness",res:"Size, px",w:"W",h:"H",wPh:"W",hPh:"H",from:"min",to:"max"},
+adv:{title:"Advanced filters",active:"active: {n}",kind:"Type",kindAll:"All",kindImage:"Photos",kindVideo:"Videos",shape:"Aspect ratio",shapeAny:"Any",shapeSq:"1:1 square",shapeVert:"9:16 portrait",shapePano:"2:1 panorama",shapeCustom:"Custom…",cmpEq:"≈",cmpGt:"wider",cmpLt:"narrower",lum:"Brightness",res:"Size, px",w:"W",h:"H",wPh:"W",hPh:"H",from:"min",to:"max",resetTt:"Reset this filter"},
 pins:{additive:"additive",additiveTt:"The preset will only overwrite the fields it defines; the rest stay unchanged",empty:"No pinned presets",applied:"Preset “{name}” applied",appliedAdd:"Preset “{name}” applied (additive)"},
 presets:{title:"Filter presets",namePh:"Preset name",saveCurrent:"Save current",empty:"No saved presets",saved:"Preset “{name}” saved",notFound:"Preset not found",apply:"Apply",del:"Delete",pin:"☆ Pin",pinned:"★ Pinned",pinTt:"Pin in filters",unpinTt:"Unpin"},
 grid:{emptyTitle:"Nothing found",emptySub:"Adjust the filters or search query"},
@@ -1206,6 +1244,7 @@ logs:{},
 settings:{title:"Settings",tabView:"View",tabOps:"Operations",tabDup:"Duplicates",tabData:"Data",language:"Language",languageSub:"Interface language; more can be imported from JSON",importLang:"Import translation",importLangSub:"Load a locale JSON file",importBtn:"Import…",exportTpl:"Export template",theme:"Theme",themeSub:"Dark or light",dark:"Dark",light:"Light",tileSize:"Thumbnail size",defSort:"Default sorting",palHover:"Palette panel on hover",palHoverSub:"Open the palette panel when the cursor touches the right screen edge",trash:"Trash",trashSub:"Deleting moves files into the _trash folder instead of permanent removal",autoNext:"Auto-advance in viewer",autoNextSub:"Automatically show the next photo after an operation",moveMode:"Move method",moveModeSub:"“Move” is a fast system operation. “Copy + delete” is the universal fallback",moveNative:"Move (native)",moveCopyDel:"Copy + delete",parallel:"Move parallelism",parallelSub:"Batch size for moving and deleting",defAlgo:"Default algorithm",algoHist:"Histogram",algoPoints:"Feature points",defThr:"Default threshold",logLimit:"Log entry limit",logLimitSub:"How many operations to keep (default 100)",export:"Export settings",exportSub:"Settings as a JSON file",exportBtn:"Export",import:"Import settings",importSub:"Load a previously saved JSON",importBtn2:"Import…",clearThumbs:"Clear preview cache",clearThumbsSub:"Thumbnails (IndexedDB)",clearLum:"Reset filter cache",clearLumSub:"Computed brightness values",clearSig:"Clear signature cache",clearSigSub:"Similar-duplicate and palette signatures",reset:"Reset settings",
 msgExported:"Settings exported",msgImported:"Settings imported",msgImportErr:"Import error: {err}",msgCacheT:"Clear preview cache?",msgCacheB:"All saved thumbnails will be removed from IndexedDB.",msgCacheDone:"Preview cache cleared",msgLumT:"Reset filter cache?",msgLumB:"Computed brightness values will be deleted.",msgLumDone:"Filter cache reset",msgSigT:"Clear signature cache?",msgSigB:"Similar-duplicate and palette signatures will be recomputed.",msgSigDone:"Signature cache cleared",msgResetT:"Reset settings?",msgResetB:"All settings will return to defaults.",msgResetDone:"Settings reset"},
 sort:{name:"Name",date:"Date",size:"Size",res:"Resolution"},
+bulk:{tab:"Compute",warn:"Computation can take a long time on large libraries. Do not close the tab until it finishes.",thumbs:"Previews",thumbsSub:"thumbnails for the grid and viewer",lum:"Brightness",lumSub:"“Brightness” filter, images only",dims:"Resolution",dimsSub:"“Aspect ratio” and “Size, px” filters",pal:"Palette signatures",palSub:"palette search, images only",dupDhash:"Duplicates: dHash",dupDhashSub:"gradient, 8×8 (64 bits)",dupAhash:"Duplicates: aHash",dupAhashSub:"average, 8×8 (64 bits)",dupPhash:"Duplicates: pHash",dupPhashSub:"DCT, fixed 64 bits",dupHist:"Duplicates: histogram",dupHistSub:"HSV, fixed 26 bins",dupPoints:"Duplicates: feature points",dupPointsSub:"128 points",modeMissing:"Missing only",modeMissingSub:"compute empty cache values",modeFull:"Full recomputation",modeFullSub:"clear selected caches and recompute",run:"Compute…",selectSomething:"Select what to compute",needFolder:"Open a folder first",busy:"Wait for the current operations to finish",confirmT:"Start computation?",confirmTFull:"Start full recomputation?",confirmFiles:"Files to process: {n}",confirmEst:"Estimated time: {time}",confirmFullNote:"Warning: selected caches will be cleared.",nothing:"Nothing to compute — everything is already cached",progress:"{task}: {done}/{total}",done:"Computation finished",cancelled:"Computation cancelled",errors:"Computation finished with {n} error(s)",timeSec:"≈ {n} sec",timeMin:"≈ {n} min",paramsNote:"Duplicate signatures are computed with base parameters (dHash/aHash 8×8, points — 128). Other parameters are computed on the fly during search."},
 msg:{folderOpened:"Folder “{name}” opened: {count} {files}",folderOpenFailed:"Could not open folder: {err}",noRecent:"Recent folder not found",accessDenied:"Access not granted",accessError:"Access error: {err}",folderReopened:"Folder “{name}” reopened",viewOnly:"View-only mode: {count} {files} (read-only)",refreshed:"Gallery refreshed: {count} {files}",refreshError:"Refresh error: {err}",changeFolderWait:"Wait for the current operations to finish",changeFolderT:"Change folder?",changeFolderB:"The queue has unfinished operations — they will be lost."},
 help:{modalTitle:"Help",hero:"local gallery manager · Chrome / Edge · files never leave your computer",aboutT:"About",aboutP:"<b>Photo Archive</b> runs directly in the browser via the File System Access API and requires no installation. All file changes go into a queue first and are executed only after confirmation.",cards:[["Gallery","File grid with filters, albums, selection and operations."],["Duplicates","Exact (SHA-256) and similar (5 algorithms) with side-by-side comparison."],["Palette","Pick photos by color composition — from a sample photo or manually."],["Queue & plan","Execution with pause, cancel and an operation log."]],palT:"Palette search",palP:"Open the palette panel with <kbd>M</kbd> or the tab button at the right screen edge (in the gallery). Two ways to make a query: <b>“From photo”</b> — click any shot in the gallery; <b>“Manual”</b> — set colors and their shares. The palette works as a filter on top of the other gallery filters and sorts the result by similarity; the similarity percentage is shown in the top-left corner of tiles. Successful queries can be saved as presets. In Settings (View) you can enable opening the panel by hovering the right edge; in that mode a “pin” button appears so the panel stays open when the cursor leaves.",hkGalT:"Hotkeys — Gallery",hkGal:[[["Ctrl","A"],"Select all visible files"],[["Shift"],"click — range selection"],[["Delete"],"Queue selected for deletion"],[["M"],"Palette panel"],[["1","–","9"],"Quick-move selection to an album"],[["0"],"Move selection to root"],[["R"],"Refresh gallery from disk"],[["/"],"Focus search"],[["Ctrl","Z"],"Undo last queue step"],[["Esc"],"Clear selection / close panels"]],hkViewT:"Hotkeys — Viewer",hkView:[[["←","→"],"Previous / next file"],[["Delete"]," / ",["↑"],"Delete current file (to queue)"],[["1","–","9"],["0"],"Quick move to album / root"],[["Mouse wheel"],"Zoom at cursor"],[["+","−"],"Zoom from center"],[["Double click"],"Zoom / reset zoom"],[["Click name"],"Rename (Enter — to queue, Esc — cancel)"],[["Esc"],"Close viewer"]],hkDupT:"Hotkeys — Duplicates",hkDup:[[["←","→"],"Files within a group"],[["↑","↓"],"Switch groups"],[["C"],"Comparison mode (two photos side by side)"],[["Esc"],"Close viewer"]],cmpNote:"Clicking a photo in a group automatically enables comparison. In comparison mode the ◀ ▶ buttons browse files, zoom is synchronized for both photos.",queueT:"Queue & execution plan",queueP:"All actions go into the queue. The plan panel in the sidebar shows operations and execution progress. While running, pause, resume and cancel are available.",filtersT:"Filters & presets",filtersP:"“Filters ▾” — advanced filters: type, aspect ratio, brightness, resolution. “Presets” save a combination of filters. Pinned presets appear in a separate panel.",albumsT:"Albums",albumsP:"Albums are subfolders of the root directory. “＋ New album…” creates an album (clicking the arrow creates it and immediately moves the selected files). “Manage albums”: create, rename, disable, delete.",setT:"Settings & caching",setItems:[["Move method","“Move (native)” or “Copy + delete”."],["Move parallelism","batch size (4–32)."],["Trash","deletion moves files into the _trash subfolder."],["Data","clear caches, export/import settings."]]},
 p:{files:{one:"file",other:"files"},ops:{one:"operation",other:"operations"},records:{one:"entry",other:"entries"},groups:{one:"group",other:"groups"},images:{one:"image",other:"images"},bits:{one:"bit",other:"bits"},points:{one:"point",other:"points"},albums:{one:"album",other:"albums"}}
@@ -1220,7 +1259,7 @@ tabs:{gallery:"Галерея",dupes:"Дубликаты",logs:"Логи"},
 topbar:{searchPh:"Поиск по имени… ( / )",refreshTt:"Обновить галерею с диска (R)",undoTt:"Отменить шаг (Ctrl+Z)",themeTt:"Сменить тему",helpTt:"Справка",settingsTt:"Настройки",changeFolderTt:"Сменить папку",ro:"РЕЖИМ ПРОСМОТРА",folderCount:"{count} {files}"},
 welcome:{title1:"Фото",title2:"архив",text:"Локальный менеджер галереи: сортировка, альбомы, поиск дубликатов. Все действия сначала попадают в очередь и выполняются только после вашего подтверждения.",openFolder:"Выбрать папку",recent:"Открыть недавнюю",fallback:"Режим просмотра…",recentPref:"Открыть недавнюю: ",noteOk:"Chrome / Edge · файлы не покидают ваш компьютер<br>полная запись: перенос, удаление, корзина",noteBad:"Ваш браузер не поддерживает запись в папку (нужен Chrome/Edge).<br>Доступен режим просмотра через «Режим просмотра…»."},
 toolbar:{sortName:"Сортировка: имя",sortDate:"Сортировка: дата",sortSize:"Сортировка: размер",sortRes:"Сортировка: разрешение",dirTt:"Направление",sizeMinPh:"МБ от",sizeMaxPh:"МБ до",sizeMinTt:"Минимальный размер файла, МБ",sizeMaxTt:"Максимальный размер файла, МБ",filters:"Фильтры ▾",filtersTt:"Расширенные фильтры",presets:"Пресеты",presetsTt:"Пресеты фильтров",pinsTt:"Закреплённые пресеты",resetAll:"Сбросить всё",resetSel:"✕ Сброс выделения",shown:"Показано: {count} из {total}",shownPal:"Показано: {count} из {total} · палитра"},
-adv:{title:"Расширенные фильтры",active:"активно: {n}",kind:"Тип",kindAll:"Все",kindImage:"Фото",kindVideo:"Видео",shape:"Форма кадра",shapeAny:"Любая",shapeSq:"1:1 квадрат",shapeVert:"9:16 верт.",shapePano:"2:1 панорама",shapeCustom:"Своё…",cmpEq:"≈",cmpGt:"шире",cmpLt:"уже",lum:"Яркость",res:"Размер, px",w:"Ш",h:"В",wPh:"Ш",hPh:"В",from:"от",to:"до"},
+adv:{title:"Расширенные фильтры",active:"активно: {n}",kind:"Тип",kindAll:"Все",kindImage:"Фото",kindVideo:"Видео",shape:"Форма кадра",shapeAny:"Любая",shapeSq:"1:1 квадрат",shapeVert:"9:16 верт.",shapePano:"2:1 панорама",shapeCustom:"Своё…",cmpEq:"≈",cmpGt:"шире",cmpLt:"уже",lum:"Яркость",res:"Размер, px",w:"Ш",h:"В",wPh:"Ш",hPh:"В",from:"от",to:"до",resetTt:"Сбросить этот фильтр"},
 pins:{additive:"аддитивно",additiveTt:"Пресет перезапишет только заполненные в нём поля, остальные останутся без изменений",empty:"Нет закреплённых пресетов",applied:"Пресет «{name}» применён",appliedAdd:"Пресет «{name}» применён (аддитивно)"},
 presets:{title:"Пресеты фильтров",namePh:"Имя пресета",saveCurrent:"Сохранить текущие",empty:"Нет сохранённых пресетов",saved:"Пресет «{name}» сохранён",notFound:"Пресет не найден",apply:"Применить",del:"Удалить",pin:"☆ Закрепить",pinned:"★ Закреплён",pinTt:"Закрепить в фильтрах",unpinTt:"Открепить"},
 grid:{emptyTitle:"Ничего не найдено",emptySub:"Измените фильтры или поисковый запрос"},
@@ -1243,6 +1282,7 @@ pal:{title:"Палитра",tabTt:"Палитра (M)",pinTt:"Закрепить
 settings:{title:"Настройки",tabView:"Вид",tabOps:"Операции",tabDup:"Дубликаты",tabData:"Данные",language:"Язык",languageSub:"Язык интерфейса; другие можно импортировать из JSON",importLang:"Импорт перевода",importLangSub:"Загрузить JSON-файл локали",importBtn:"Импорт…",exportTpl:"Экспорт шаблона",theme:"Тема",themeSub:"Тёмная или светлая",dark:"Тёмная",light:"Светлая",tileSize:"Размер миниатюр",defSort:"Сортировка по умолчанию",palHover:"Панель палитры по наведению",palHoverSub:"Открывать панель палитры при наведении курсора на правый край экрана",trash:"Корзина",trashSub:"Удаление переносит файлы в папку _trash вместо безвозвратного удаления",autoNext:"Автопереход в просмотре",autoNextSub:"После операции автоматически показывать следующее фото",moveMode:"Способ переноса",moveModeSub:"«Перемещение» — быстрая системная операция. «Копирование + удаление» — универсальный способ",moveNative:"Перемещение (move)",moveCopyDel:"Копирование + удаление",parallel:"Параллельность переноса",parallelSub:"Размер батча при переносе и удалении",defAlgo:"Алгоритм по умолчанию",algoHist:"Гистограмма",algoPoints:"Опорные точки",defThr:"Порог по умолчанию",logLimit:"Лимит записей в журнале",logLimitSub:"Сколько операций хранить (по умолчанию 100)",export:"Экспорт настроек",exportSub:"Настройки в JSON-файл",exportBtn:"Экспорт",import:"Импорт настроек",importSub:"Загрузить ранее сохранённый JSON",importBtn2:"Импорт…",clearThumbs:"Очистить кэш превью",clearThumbsSub:"Миниатюры (IndexedDB)",clearLum:"Сбросить кэш фильтров",clearLumSub:"Рассчитанные значения яркости",clearSig:"Очистить кэш сигнатур",clearSigSub:"Сигнатуры похожих дубликатов и палитры",reset:"Сбросить настройки",
 msgExported:"Настройки экспортированы",msgImported:"Настройки импортированы",msgImportErr:"Ошибка импорта: {err}",msgCacheT:"Очистить кэш превью?",msgCacheB:"Все сохранённые миниатюры будут удалены из IndexedDB.",msgCacheDone:"Кэш превью очищен",msgLumT:"Сбросить кэш фильтров?",msgLumB:"Рассчитанные значения яркости будут удалены.",msgLumDone:"Кэш фильтров сброшен",msgSigT:"Очистить кэш сигнатур?",msgSigB:"Сигнатуры похожих дубликатов и палитры будут рассчитываться заново.",msgSigDone:"Кэш сигнатур очищен",msgResetT:"Сбросить настройки?",msgResetB:"Все настройки вернутся к значениям по умолчанию.",msgResetDone:"Настройки сброшены"},
 sort:{name:"Имя",date:"Дата",size:"Размер",res:"Разрешение"},
+bulk:{tab:"Расчёт",warn:"Расчёт может занять много времени при большом числе файлов. Не закрывайте вкладку до завершения.",thumbs:"Превью",thumbsSub:"миниатюры для сетки и просмотра",lum:"Яркость",lumSub:"фильтр «Яркость», только фото",dims:"Разрешение",dimsSub:"фильтры «Форма кадра» и «Размер, px»",pal:"Сигнатуры палитры",palSub:"поиск по палитре, только фото",dupDhash:"Дубликаты: dHash",dupDhashSub:"градиентный, 8×8 (64 бита)",dupAhash:"Дубликаты: aHash",dupAhashSub:"средний, 8×8 (64 бита)",dupPhash:"Дубликаты: pHash",dupPhashSub:"DCT, фикс. 64 бита",dupHist:"Дубликаты: гистограмма",dupHistSub:"HSV, фикс. 26 бинов",dupPoints:"Дубликаты: опорные точки",dupPointsSub:"128 точек",modeMissing:"Только отсутствующие",modeMissingSub:"дорасчитать пустые значения в кеше",modeFull:"Полный перерасчёт",modeFullSub:"очистить выбранные кеши и посчитать заново",run:"Рассчитать…",selectSomething:"Отметьте, что нужно рассчитать",needFolder:"Сначала откройте папку",busy:"Дождитесь завершения выполнения операций",confirmT:"Начать расчёт?",confirmTFull:"Начать полный перерасчёт?",confirmFiles:"Файлов к обработке: {n}",confirmEst:"Оценка времени: {time}",confirmFullNote:"Внимание: выбранные кеши будут очищены.",nothing:"Нечего рассчитывать — всё уже посчитано",progress:"{task}: {done}/{total}",done:"Расчёт завершён",cancelled:"Расчёт отменён",errors:"Расчёт завершён с ошибками: {n}",timeSec:"≈ {n} с",timeMin:"≈ {n} мин",paramsNote:"Сигнатуры дубликатов считаются с базовыми параметрами (dHash/aHash 8×8, точки — 128). Другие параметры рассчитываются на лету при поиске."},
 msg:{folderOpened:"Папка «{name}» открыта: {count} {files}",folderOpenFailed:"Не удалось открыть папку: {err}",noRecent:"Недавняя папка не найдена",accessDenied:"Доступ не разрешён",accessError:"Ошибка доступа: {err}",folderReopened:"Папка «{name}» открыта повторно",viewOnly:"Режим просмотра: {count} {files} (без изменений)",refreshed:"Галерея обновлена: {count} {files}",refreshError:"Ошибка обновления: {err}",changeFolderWait:"Дождитесь завершения выполнения операций",changeFolderT:"Сменить папку?",changeFolderB:"В очереди есть невыполненные операции — они будут потеряны."},
 help:{modalTitle:"Справка",hero:"локальный менеджер галереи · Chrome / Edge · файлы не покидают компьютер",aboutT:"О программе",aboutP:"<b>«Фотоархив»</b> работает прямо в браузере через File System Access API и не требует установки. Все изменения файлов сначала попадают в очередь и выполняются только после подтверждения.",cards:[["Галерея","Сетка файлов с фильтрами, альбомами, выделением и операциями."],["Дубликаты","Точные (SHA-256) и похожие (5 алгоритмов) с сравнением бок о бок."],["Палитра","Подбор фото по цветовому соотношению — из фото-образца или вручную."],["Очередь и план","Выполнение с паузой, отменой и журналом операций."]],palT:"Поиск по палитре",palP:"Откройте панель палитры клавишей <kbd>M</kbd> или кнопкой-язычком у правого края экрана (в галерее). Запрос двумя способами: <b>«Из фото»</b> — кликните по любому снимку в галерее; <b>«Вручную»</b> — задайте цвета и их доли. Палитра работает как фильтр поверх остальных фильтров галереи и сортирует результат по похожести; процент похожести показывается в левом верхнем углу плиток. Удачные запросы сохраняются как пресеты. В настройках (Вид) включается открытие панели наведением на правый край; в этом режиме появляется кнопка «закрепить», чтобы панель не закрывалась при уходе курсора.",hkGalT:"Горячие клавиши — Галерея",hkGal:[[["Ctrl","A"],"Выделить все видимые файлы"],[["Shift"],"клик — выделение диапазона"],[["Delete"],"Выделенные — в очередь на удаление"],[["M"],"Панель палитры"],[["1","–","9"],"Быстрый перенос выделения в альбом"],[["0"],"Перенос выделения в корень"],[["R"],"Обновить галерею с диска"],[["/"],"Фокус на поиск"],[["Ctrl","Z"],"Отменить последний шаг очереди"],[["Esc"],"Снять выделение / закрыть панели"]],hkViewT:"Горячие клавиши — Просмотр",hkView:[[["←","→"],"Предыдущий / следующий файл"],[["Delete"]," / ",["↑"],"Удалить текущий файл (в очередь)"],[["1","–","9"],["0"],"Быстрый перенос в альбом / корень"],[["Колесо мыши"],"Зум от курсора"],[["+","−"],"Зум от центра"],[["Двойной клик"],"Зум / сброс зума"],[["Клик по имени"],"Переименовать (Enter — в очередь, Esc — отмена)"],[["Esc"],"Закрыть просмотр"]],hkDupT:"Горячие клавиши — Дубликаты",hkDup:[[["←","→"],"Файлы в группе"],[["↑","↓"],"Переключение групп"],[["C"],"Режим сравнения (два фото рядом)"],[["Esc"],"Закрыть просмотр"]],cmpNote:"При клике на фото в группе сравнение включается автоматически. В режиме сравнения кнопки ◀ ▶ листают файлы, зум синхронен для обоих фото.",queueT:"Очередь и план выполнения",queueP:"Все действия попадают в очередь. Панель плана в сайдбаре показывает операции и ход выполнения. Во время выполнения доступны пауза, продолжение и отмена.",filtersT:"Фильтры и пресеты",filtersP:"«Фильтры ▾» — расширенные фильтры: тип, форма кадра, яркость, разрешение. «Пресеты» сохраняют комбинацию фильтров. Закреплённые пресеты выводятся отдельной панелью.",albumsT:"Альбомы",albumsP:"Альбомы — подпапки корневой директории. Пункт «＋ Новый альбом…» создаёт альбом (клик по стрелке — создаёт и сразу переносит выделенные файлы). «Управление альбомами»: создание, переименование, отключение, удаление.",setT:"Настройки и кеширование",setItems:[["Способ переноса","«Перемещение (move)» или «Копирование + удаление»."],["Параллельность переноса","размер батча (4–32)."],["Корзина","удаление в подпапку _trash."],["Данные","очистка кешей, экспорт/импорт настроек."]]},
 p:{files:{one:"файл",few:"файла",many:"файлов",other:"файлов"},ops:{one:"операция",few:"операции",many:"операций",other:"операций"},records:{one:"запись",few:"записи",many:"записей",other:"записей"},groups:{one:"группа",few:"группы",many:"групп",other:"групп"},images:{one:"изображение",few:"изображения",many:"изображений",other:"изображений"},bits:{one:"бит",few:"бита",many:"бит",other:"бита"},points:{one:"точка",few:"точки",many:"точек",other:"точек"},albums:{one:"альбом",few:"альбома",many:"альбомов",other:"альбомов"}}
@@ -1296,6 +1336,11 @@ const req=st.openCursor();
 req.onsuccess=e=>{const c=e.target.result;if(c){map.set(c.key,c.value);c.continue();}};
 tx.oncomplete=()=>res(map);tx.onerror=()=>res(new Map());
 }catch(e){res(new Map());}
+});},
+getAllKeys(store){return new Promise(res=>{
+try{const req=IDB.db.transaction(store,"readonly").objectStore(store).getAllKeys();
+req.onsuccess=()=>res(req.result||[]);req.onerror=()=>res([]);}
+catch(e){res([]);}
 });}
 };
 /* ===== 7. WORKER ===== */
@@ -2649,6 +2694,16 @@ else v=(Math.max(0,a.width)*Math.max(0,a.height))-(Math.max(0,b.width)*Math.max(
 return v*d;});
 S.visible=arr;
 }
+$("#advPanel").addEventListener("click",e=>{
+const b=e.target.closest("[data-adv-reset]");
+if(!b)return;
+const g=b.dataset.advReset;
+if(g==="kind")S.adv.kind="all";
+else if(g==="shape")S.adv.shape={preset:"any",cmp:"eq",cw:"",ch:""};
+else if(g==="lum"){S.adv.lumMin="";S.adv.lumMax="";}
+else if(g==="res"){S.adv.resW={cmp:"gte",val:""};S.adv.resH={cmp:"gte",val:""};}
+syncAdvUI();renderGrid();updateAdvBadge();
+});
 function renderGrid(){
 applyFilters();
 gridEl.innerHTML="";
@@ -4894,7 +4949,163 @@ a.download="fotoarhiv-locale-template.json";a.click();
 setTimeout(()=>URL.revokeObjectURL(a.href),2000);
 }
 };
-/* ===== 23. HOTKEYS / BOOT ===== */
+/* ===== 23. PACKAGE COMPUTATIONS ===== */
+const BULK_TASKS=[
+{key:"thumbs",lk:"bulk.thumbs",est:.3},
+{key:"lum",lk:"bulk.lum",est:.05},
+{key:"dims",lk:"bulk.dims",est:.15},
+{key:"pal",lk:"bulk.pal",est:.15},
+{key:"dup-dhash",lk:"bulk.dupDhash",algo:"dhash",N:8,est:.15},
+{key:"dup-ahash",lk:"bulk.dupAhash",algo:"ahash",N:8,est:.15},
+{key:"dup-phash",lk:"bulk.dupPhash",algo:"phash",N:64,est:.2},
+{key:"dup-hist",lk:"bulk.dupHist",algo:"hist",N:26,est:.15},
+{key:"dup-points",lk:"bulk.dupPoints",algo:"points",N:128,est:.25},
+];
+const bulkState={active:false,cancel:false};
+
+async function buildBulkPlan(keys,full){
+const all=[...S.files.values()];
+const imgs=all.filter(f=>f.kind==="image");
+const needSigs=[...keys].some(k=>k==="pal"||k.startsWith("dup-"));
+const sigKeys=needSigs&&!full?new Set(await IDB.getAllKeys("sigs")):null;
+const lumKeys=keys.has("lum")&&!full?new Set(await IDB.getAllKeys("lum")):null;
+const dimsKeys=keys.has("dims")&&!full?new Set(await IDB.getAllKeys("dims")):null;
+const thumbKeys=keys.has("thumbs")&&!full?new Set(await IDB.getAllKeys("thumbs")):null;
+const plan=[];
+for(const td of BULK_TASKS){
+if(!keys.has(td.key))continue;
+let items;
+if(td.key==="thumbs")items=full?all:all.filter(f=>!f.thumbUrl&&!thumbKeys.has(thumbKey(f)));
+else if(td.key==="lum")items=full?imgs:imgs.filter(f=>f.lum==null&&!lumKeys.has(thumbKey(f)));
+else if(td.key==="dims")items=full?all:all.filter(f=>!(f.width>0)&&!dimsKeys.has(thumbKey(f)));
+else if(td.key==="pal")items=full?imgs:imgs.filter(f=>!sigKeys.has(thumbKey(f)+"|pal"));
+else items=full?imgs:imgs.filter(f=>!sigKeys.has(thumbKey(f)+"|"+td.algo+"|"+td.N));
+if(items.length)plan.push({def:td,items});
+}
+return plan;
+}
+
+async function bulkClear(keys){
+if(keys.has("thumbs")){IDB.clear("thumbs");
+for(const f of S.files.values()){if(f.thumbUrl)URL.revokeObjectURL(f.thumbUrl);f.thumbUrl=null;}}
+if(keys.has("lum")){IDB.clear("lum");for(const f of S.files.values())f.lum=null;}
+if(keys.has("dims")){IDB.clear("dims");for(const f of S.files.values()){f.width=0;f.height=0;f.duration=0;}}
+if([...keys].some(k=>k==="pal"||k.startsWith("dup-"))){
+for(const k of await IDB.getAllKeys("sigs")){
+if(keys.has("pal")&&k.endsWith("|pal")){IDB.del("sigs",k);continue;}
+for(const td of BULK_TASKS){
+if(td.algo&&keys.has(td.key)&&k.includes("|"+td.algo+"|")){IDB.del("sigs",k);break;}
+}
+}
+}
+}
+
+async function bulkCalcOne(td,f){
+try{
+if(td.key==="thumbs"){await ensureThumb(f);return !!f.thumbUrl;}
+if(td.key==="lum"){
+const key=thumbKey(f);
+const c=await IDB.get("lum",key);
+if(c!=null){f.lum=c;return true;}
+const fo=await getFileObj(f);
+const b=await createImageBitmap(fo,{resizeWidth:32,resizeHeight:32,imageOrientation:"from-image"});
+const cv=new OffscreenCanvas(b.width,b.height);
+const ctx=cv.getContext("2d",{willReadFrequently:true});
+ctx.drawImage(b,0,0);
+const d=ctx.getImageData(0,0,b.width,b.height).data;
+let s=0;for(let p=0;p<d.length;p+=4)s+=(d[p]*77+d[p+1]*150+d[p+2]*29)>>8;
+f.lum=Math.round(s/(b.width*b.height));
+b.close();IDB.put("lum",key,f.lum);
+return true;
+}
+if(td.key==="dims"){
+if(f.width>0)return true;
+const fo=await getFileObj(f);
+if(f.kind==="image"){
+const b=await createImageBitmap(fo,{imageOrientation:"from-image"});
+f.width=b.width;f.height=b.height;b.close();
+}else{
+const u=URL.createObjectURL(fo),v=document.createElement("video");
+v.muted=true;v.preload="metadata";v.src=u;
+await once(v,"loadedmetadata");
+f.width=v.videoWidth;f.height=v.videoHeight;f.duration=v.duration||0;
+URL.revokeObjectURL(u);
+}
+saveDims(f);
+return true;
+}
+if(td.key==="pal"){await getPalSig(f);return true;}
+const key=thumbKey(f)+"|"+td.algo+"|"+td.N;
+let sig=await IDB.get("sigs",key);
+if(!sig){
+const fo=await getFileObj(f);
+const bmp=await createImageBitmap(fo,{imageOrientation:"from-image"});
+const r=await workerCall({cmd:"sig",bmp,algo:td.algo,N:td.N},[bmp]);
+sig=r.sig;
+IDB.put("sigs",key,sig);
+}
+return true;
+}catch(e){return false;}
+}
+
+async function runBulkCalc(plan){
+bulkState.active=true;bulkState.cancel=false;
+$("#btnBulkRun").disabled=true;
+$("#btnBulkCancel").style.display="";
+$("#bulkProgWrap").style.display="";
+const total=plan.reduce((s,p)=>s+p.items.length,0);
+let done=0,errs=0;
+const paint=task=>{
+$("#bulkProg").style.width=(Math.min(done,total)/total*100)+"%";
+$("#bulkProgTxt").textContent=t("bulk.progress",{task,done,total});
+};
+for(const p of plan){
+if(bulkState.cancel)break;
+for(let i=0;i<p.items.length;i+=4){
+if(bulkState.cancel)break;
+const chunk=p.items.slice(i,i+4);
+const res=await Promise.all(chunk.map(f=>poolRun(()=>bulkCalcOne(p.def,f))));
+res.forEach(ok=>{if(!ok)errs++;});
+done+=chunk.length;
+paint(t(p.def.lk));
+}
+}
+bulkState.active=false;
+$("#btnBulkRun").disabled=false;
+$("#btnBulkCancel").style.display="none";
+if(S.mode==="gallery")renderGrid();
+else if(S.mode==="dupes")renderDupResults();
+if(bulkState.cancel)toast(t("bulk.cancelled"),"info");
+else if(errs)toast(t("bulk.errors",{n:errs}),"err");
+else toast(t("bulk.done"),"ok");
+}
+
+$("#btnBulkCancel").onclick=()=>{bulkState.cancel=true;};
+
+$("#btnBulkRun").onclick=async()=>{
+if(bulkState.active)return;
+if(!S.root){toast(t("bulk.needFolder"),"err");return;}
+if(S.running.length){toast(t("bulk.busy"),"err");return;}
+const keys=new Set($$("[data-calctask]").filter(i=>i.checked).map(i=>i.dataset.calctask));
+if(!keys.size){toast(t("bulk.selectSomething"),"info");return;}
+const full=document.querySelector('input[name=bulkMode]:checked').value==="full";
+const plan=await buildBulkPlan(keys,full);
+const total=plan.reduce((s,p)=>s+p.items.length,0);
+if(!total){toast(t("bulk.nothing"),"info");return;}
+const sec=plan.reduce((s,p)=>s+p.items.length*p.def.est,0);
+const time=sec<90?t("bulk.timeSec",{n:Math.max(1,Math.round(sec))}):t("bulk.timeMin",{n:Math.max(1,Math.round(sec/60))});
+const lines=[t("bulk.confirmFiles",{n:total}),
+...plan.map(p=>"· "+t(p.def.lk)+" — "+p.items.length),
+t("bulk.confirmEst",{time})];
+if(full)lines.push(t("bulk.confirmFullNote"));
+$("#cfText").style.whiteSpace="pre-line";
+const ok=await confirmDlg(full?t("bulk.confirmTFull"):t("bulk.confirmT"),lines.join("\n"));
+$("#cfText").style.whiteSpace="";
+if(!ok)return;
+if(full)await bulkClear(keys);
+await runBulkCalc(plan);
+};
+/* ===== 24. HOTKEYS / BOOT ===== */
 document.addEventListener("keydown",e=>{
 if(S.captureKey!=null){
 e.preventDefault();e.stopPropagation();
