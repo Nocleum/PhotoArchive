@@ -1,0 +1,799 @@
+{
+  "fotoarhivLocale": 1,
+  "code": "xx",
+  "name": "New language",
+  "units": [
+    "B",
+    "KB",
+    "MB",
+    "GB"
+  ],
+  "strings": {
+    "doc": {
+      "title": "Photo Archive — Gallery Manager"
+    },
+    "brand": {
+      "name": "PHOTOARCHIVE",
+      "tag": "file manager · v3.5"
+    },
+    "common": {
+      "cancel": "Cancel",
+      "cancelSearch": "Cancel search",
+      "close": "Close",
+      "save": "Save",
+      "create": "Create",
+      "confirm": "Confirm",
+      "clear": "Clear",
+      "reset": "Reset",
+      "ok": "OK"
+    },
+    "i18n": {
+      "notFound": "Locale “{code}” is not registered",
+      "badFormat": "Invalid translation file format",
+      "imported": "Translation “{name}” loaded and applied",
+      "importError": "Import error: {err}"
+    },
+    "tabs": {
+      "gallery": "Gallery",
+      "dupes": "Duplicates",
+      "logs": "Log"
+    },
+    "topbar": {
+      "searchPh": "Search by name… ( / )",
+      "refreshTt": "Refresh gallery from disk (R)",
+      "undoTt": "Undo last step (Ctrl+Z)",
+      "themeTt": "Toggle theme",
+      "helpTt": "Help",
+      "settingsTt": "Settings",
+      "changeFolderTt": "Change folder",
+      "ro": "VIEW-ONLY MODE",
+      "folderCount": "{count} {files}"
+    },
+    "welcome": {
+      "title1": "Photo",
+      "title2": "Archive",
+      "text": "Local gallery manager: sorting, albums, duplicate search. Every action goes into the queue first and runs only after your confirmation.",
+      "openFolder": "Choose folder",
+      "recent": "Open recent",
+      "fallback": "View-only mode…",
+      "recentPref": "Open recent: ",
+      "noteOk": "Chrome / Edge · your files never leave this computer<br>full write access: move, delete, trash",
+      "noteBad": "Your browser does not support writing to folders (Chrome/Edge required).<br>View-only mode is available via “View-only mode…”."
+    },
+    "toolbar": {
+      "sortName": "Sort: name",
+      "sortDate": "Sort: date",
+      "sortSize": "Sort: size",
+      "sortRes": "Sort: resolution",
+      "dirTt": "Direction",
+      "sizeMinPh": "MB min",
+      "sizeMaxPh": "MB max",
+      "sizeMinTt": "Minimum file size, MB",
+      "sizeMaxTt": "Maximum file size, MB",
+      "filters": "Filters ▾",
+      "filtersTt": "Advanced filters",
+      "presets": "Presets",
+      "presetsTt": "Filter presets",
+      "pinsTt": "Pinned presets",
+      "resetAll": "Reset all",
+      "resetSel": "✕ Clear selection",
+      "shown": "Shown: {count} of {total}",
+      "shownPal": "Shown: {count} of {total} · palette"
+    },
+    "adv": {
+      "title": "Advanced filters",
+      "active": "active: {n}",
+      "kind": "Type",
+      "kindAll": "All",
+      "kindImage": "Photos",
+      "kindVideo": "Videos",
+      "shape": "Aspect ratio",
+      "shapeAny": "Any",
+      "shapeSq": "1:1 square",
+      "shapeVert": "9:16 portrait",
+      "shapePano": "2:1 panorama",
+      "shapeCustom": "Custom…",
+      "cmpEq": "≈",
+      "cmpGt": "wider",
+      "cmpLt": "narrower",
+      "lum": "Brightness",
+      "res": "Size, px",
+      "w": "W",
+      "h": "H",
+      "wPh": "W",
+      "hPh": "H",
+      "from": "min",
+      "to": "max"
+    },
+    "pins": {
+      "additive": "additive",
+      "additiveTt": "The preset will only overwrite the fields it defines; the rest stay unchanged",
+      "empty": "No pinned presets",
+      "applied": "Preset “{name}” applied",
+      "appliedAdd": "Preset “{name}” applied (additive)"
+    },
+    "presets": {
+      "title": "Filter presets",
+      "namePh": "Preset name",
+      "saveCurrent": "Save current",
+      "empty": "No saved presets",
+      "saved": "Preset “{name}” saved",
+      "notFound": "Preset not found",
+      "apply": "Apply",
+      "del": "Delete",
+      "pin": "☆ Pin",
+      "pinned": "★ Pinned",
+      "pinTt": "Pin in filters",
+      "unpinTt": "Unpin"
+    },
+    "grid": {
+      "emptyTitle": "Nothing found",
+      "emptySub": "Adjust the filters or search query"
+    },
+    "selbar": {
+      "delete": "Delete",
+      "clearTt": "Clear selection (Esc)"
+    },
+    "albums": {
+      "title": "Albums",
+      "manage": "Manage albums",
+      "all": "All files",
+      "root": "No album (root)",
+      "new": "＋ New album…",
+      "newMoveTt": "Create album and move selected photos",
+      "moveHereTt": "Selected photos → to this album",
+      "moveRootTt": "Selected photos → to root (key 0)",
+      "rebindTt": "Reassign hotkey",
+      "trashClear": "clear",
+      "trashClearTt": "Empty trash",
+      "doomed": "🗑 {name} — queued for deletion"
+    },
+    "album": {
+      "createTitle": "New album",
+      "createBtn": "Create",
+      "exists": "Album already exists",
+      "created": "Album “{name}” created",
+      "createdKey": "Album “{name}” created, hotkey {key}",
+      "createFailed": "Could not create album: {err}",
+      "selectFirst": "Select photos first",
+      "captureHint": "Press a digit 1–9 for “{name}” · Esc — cancel · same digit — unbind",
+      "captureBad": "Only digits 1–9 are available for albums",
+      "keySet": "Hotkey {key} unbound from “{name}”"
+    },
+    "dup": {
+      "title": "Duplicate search",
+      "exact": "Exact",
+      "similar": "Similar",
+      "algorithm": "Algorithm",
+      "algoDhash": "dHash — gradient",
+      "algoAhash": "aHash — average",
+      "algoPhash": "pHash — DCT (robust)",
+      "algoHist": "Color histogram",
+      "algoPoints": "Feature points",
+      "threshold": "Similarity threshold:",
+      "pointCount": "Point count",
+      "run": "Find duplicates",
+      "note": "Similar — images only.<br>Exact — photos and videos (SHA-256).<br>Signatures are cached.<br>Palette matching — in the gallery (M).",
+      "noteDhash": "Compares gradients between neighboring pixels. Fast, robust to compression.",
+      "noteAhash": "Compares pixel brightness against the mean. Fastest.",
+      "notePhash": "Low-frequency DCT analysis. Robust to cropping and color correction.",
+      "noteHist": "Color histogram intersection (HSV). Ignores geometry.",
+      "notePoints": "Feature point matching. Robust to rotation and scale.",
+      "optBits": "{grid}×{grid} → {count} {bits}",
+      "optPoints": "{count} {points}",
+      "optPhash": "fixed 64 bits (DCT 32×32)",
+      "optHist": "fixed 26 bins (H/S/V)",
+      "candidates": "Candidates by size: {n}",
+      "hashing": "SHA-256 {i}/{n}: {name}",
+      "sigs": "Signatures {i}/{n} (cached: {cached})",
+      "comparing": "Comparing {n} images…",
+      "foundExact": "Found {n} exact duplicate {groups}",
+      "foundSimilar": "Found {n} similar {groups}",
+      "cancelled": "Search cancelled",
+      "noSigs": "Could not collect signatures",
+      "noImages": "No images",
+      "compareError": "Comparison error: {err}",
+      "headFound": "Groups found: {n}",
+      "headSave": "potential saving: {size}",
+      "headMarked": "marked for deletion: {n}",
+      "groupTitle": "Group {n} · {count} {files}",
+      "sugSize": "Keep largest",
+      "sugRes": "Keep best resolution",
+      "sugDate": "Keep earliest",
+      "sugNone": "Clear choice",
+      "mark": "Mark for deletion",
+      "marked": "✓ Marked for deletion",
+      "flag": "DELETE",
+      "viewTt": "Open viewer",
+      "emptyTitle": "No duplicates found",
+      "emptySub": "Press “Find duplicates” to search again",
+      "kept": "Kept: {name}",
+      "histNote": "auto-select in a group",
+      "markAdded": "marked",
+      "markRemoved": "unmarked"
+    },
+    "plan": {
+      "title": "Plan",
+      "pause": "⏸ Pause",
+      "resume": "▶ Resume",
+      "cancelAll": "✕ Cancel",
+      "cancelAllTt": "Cancel entire execution",
+      "runAll": "Execute all",
+      "runAllTt": "Execute all queued operations",
+      "queue": "Queue",
+      "queueTt": "Operation queue",
+      "details": "Details",
+      "detailsTt": "Operation plan details",
+      "empty": "No operations",
+      "count": "{n} {ops}",
+      "runningWord": "executing",
+      "dropTt": "Remove from plan",
+      "execTt": "Execute",
+      "upcoming": "Up next ({n}):",
+      "opCountShort": "{n} f."
+    },
+    "queue": {
+      "title": "Operation queue",
+      "undo": "↩ Undo last step",
+      "clear": "Clear queue",
+      "run": "Execute…",
+      "empty": "Queue is empty",
+      "removeTt": "Remove from queue",
+      "cleared": "Queue cleared",
+      "clearConfirmT": "Clear the queue?",
+      "clearConfirmB": "All queued operations will be removed.",
+      "nothing": "Nothing to undo",
+      "undone": "Undone: {label}",
+      "filesField": "files: {n}",
+      "moveTo": "Move → “{target}”",
+      "moveRoot": "Move → “{root}”",
+      "delete": "Delete",
+      "deletePerm": "Delete (permanent)",
+      "rename": "Rename",
+      "delAlbum": "Delete album “{name}”",
+      "renAlbum": "Rename album “{name}”",
+      "detailsFiles": "files: {n}{size}",
+      "detailsAlbumDel": "with files: {action}",
+      "detailsAlbumDelete": "delete permanently",
+      "detailsAlbumEvac": "move → {dest}",
+      "detailsAlbumRoot": "root",
+      "detailsRoot": "root",
+      "inQueueMove": "Queued: move {n} → “{target}”",
+      "inQueueMoveRoot": "Queued: move {n} → “{root}”",
+      "inQueueDel": "Queued: delete {n} {files}",
+      "removedQueue": "Removed from queue: {n} {files}",
+      "histMove": "Move {n} file(s) → “{target}”",
+      "histMoveRoot": "Move {n} file(s) → “{root}”",
+      "histDel": "Delete {n} file(s)",
+      "histTrash": "Empty trash ({n})",
+      "histRenAlbum": "Rename album “{a}” → “{b}”",
+      "histDupAuto": "Duplicates: auto-select in a group",
+      "histDupMark": "Duplicates: {action} {name}",
+      "renameCancelled": "Rename cancelled"
+    },
+    "summary": {
+      "title": "Operation plan",
+      "empty": "The queue is empty — nothing to execute",
+      "running": "Executing",
+      "opsInWork": "{n} {ops} in progress",
+      "remove": "Remove from plan",
+      "execute": "Execute",
+      "objCount": "{n} object(s)",
+      "secMove": "Move ({n} {files}) → “{target}”",
+      "secMoveRoot": "Move ({n} {files}) → “{root}”",
+      "secDel": "Delete ({n} {files})",
+      "secRen": "Rename ({n} {files})",
+      "secRenAlbum": "Rename albums ({n})",
+      "secDelAlbum": "Delete albums ({n})",
+      "subMoveNative": "mode: native move",
+      "subMoveCopy": "mode: copy + delete",
+      "subDelNoTrash": "PERMANENT (trash disabled)",
+      "subDelPerm": "PERMANENT",
+      "subDelMixed": "some permanent, some to trash",
+      "subDelTrash": "move to trash ({trash}/)",
+      "subRen": "files will be renamed",
+      "subRenAlbum": "folders will be renamed",
+      "subDelAlbum": "folders will be deleted from disk",
+      "shortMove": "Move → “{target}”",
+      "shortMoveRoot": "Move → “{root}”",
+      "shortDel": "Delete",
+      "shortRen": "Rename",
+      "shortRenAlbum": "Rename album",
+      "shortDelAlbum": "Delete album",
+      "trashName": "trash",
+      "listAlbumDel": "“{name}” — {n} {files}: {action}",
+      "listActionDelete": "delete",
+      "listActionEvac": "→ {dest}",
+      "listActionRoot": "→ {root}",
+      "execDone": "All operations completed",
+      "execErrors": "Completed with errors: {n}",
+      "workerCrash": "Worker crashed"
+    },
+    "exec": {
+      "cancelled": "Execution cancelled…"
+    },
+    "log": {
+      "title": "Operation log",
+      "entries": "{n} {records}",
+      "clear": "Clear",
+      "clearConfirmT": "Clear the log?",
+      "clearConfirmB": "All entries will be deleted.",
+      "emptyTitle": "Log is empty",
+      "emptySub": "Perform operations — they will appear here",
+      "done": "done",
+      "partial": "partial {done}/{total}",
+      "cancelled": "cancelled",
+      "noFiles": "No file list",
+      "prevState": "Previous state",
+      "findInGallery": "Find in gallery",
+      "opMove": "Move {n} {files} → “{target}”",
+      "opMoveRoot": "Move {n} {files} → “{root}”",
+      "opDel": "Delete {n} {files}",
+      "opRen": "Rename {n} {files}",
+      "opDelAlbum": "Delete album “{name}”",
+      "opRenAlbum": "Rename album “{a}” → “{b}”"
+    },
+    "calc": {
+      "title": "Computation needed",
+      "partial": "Compute missing",
+      "full": "Full recomputation",
+      "lumTitle": "Brightness filter",
+      "lumText": "{n} images have no brightness value yet — computation needed.",
+      "lumPartial": "Compute missing ({n})",
+      "lumFull": "Full recomputation ({n})",
+      "dimsTitleShape": "Aspect ratio filter",
+      "dimsTitleW": "Width filter",
+      "dimsTitleH": "Height filter",
+      "dimsText": "{n} files have unknown resolution — computation needed.",
+      "dimsPartial": "Compute missing ({n})",
+      "dimsFull": "Full recomputation",
+      "presetTitle": "Computed filters",
+      "presetText": "The preset includes computed filters. Data is missing for {notes}. Compute now?",
+      "presetPartial": "Compute missing values",
+      "presetFull": "Full recomputation",
+      "noteLum": "brightness — {n} {images}",
+      "noteDims": "resolution — {n} {files}",
+      "lumDone": "Brightness computed"
+    },
+    "rename": {
+      "title": "Rename",
+      "newName": "New name",
+      "confirm": "Rename",
+      "photo": "Rename “{name}”",
+      "album": "Rename album “{name}”",
+      "enterName": "Enter a name",
+      "toast": "Queued: rename → “{name}”"
+    },
+    "albumDel": {
+      "title": "Delete album",
+      "album": "Album",
+      "infoFiles": "Album “{name}” contains {n} {files}. Choose what to do with them.",
+      "infoEmpty": "Album “{name}” is empty. The folder will be deleted after confirmation.",
+      "evacuate": "<b>Keep photos</b> — move them out, then delete the empty album",
+      "dest": "Move to",
+      "delete": "<b>Delete photos with the album</b> — permanently, bypassing trash",
+      "confirm": "Queue for deletion",
+      "rootOption": "Root (no album)",
+      "albumOption": "Album “{name}”",
+      "queued": "Album “{name}” queued for deletion",
+      "noAlbums": "No albums to delete",
+      "wait": "Wait for the current execution to finish",
+      "filesCount": "{n} {files}"
+    },
+    "mgmt": {
+      "title": "Manage albums",
+      "newPh": "New album name",
+      "immediate": "Delete albums immediately (no queue) — applies within this session",
+      "empty": "No albums",
+      "rename": "Rename",
+      "enable": "Enable",
+      "disable": "Disable",
+      "del": "Delete"
+    },
+    "trash": {
+      "empty": "Trash is empty",
+      "confirmT": "Empty trash?",
+      "confirmB": "{n} {files} will be permanently deleted."
+    },
+    "lb": {
+      "zoomOutTt": "Zoom out (−)",
+      "zoomInTt": "Zoom in (+)",
+      "zoomResetTt": "Reset",
+      "zoomReset": "reset",
+      "compare": "⊞ Compare",
+      "closeCompare": "✕ Close comparison",
+      "dupMark": "🗑 Mark for deletion",
+      "dupMarked": "✓ Marked for deletion — unmark",
+      "delete": "Delete",
+      "unqueue": "↩ Remove from queue",
+      "root": "⌂ root",
+      "hintGallery": "← → navigation · Del or ↑ delete · 1–9 album / 0 root · wheel — zoom at cursor · click name — rename",
+      "hintDupes": "← → files in group · ↑ ↓ switch groups · C compare · Esc close",
+      "album": "album",
+      "rootName": "root",
+      "brightness": "brightness",
+      "qMove": "→ queued for move: “{target}”",
+      "qMoveRoot": "→ queued for move: “{root}”",
+      "qRename": "✎ queued for rename → “{name}”",
+      "qDelete": "🗑 queued for deletion",
+      "renameTt": "Click to rename",
+      "prevPaneTt": "Previous file in group",
+      "nextPaneTt": "Next file in group",
+      "markPane": "Mark for deletion",
+      "markPaneOn": "✓ Marked for deletion"
+    },
+    "pal": {
+      "title": "Palette",
+      "tabTt": "Palette (M)",
+      "pinTt": "Pin panel",
+      "pinOnTt": "Unpin panel",
+      "closeTt": "Close (M / Esc)",
+      "find": "Find",
+      "reset": "Reset",
+      "resetTt": "Reset palette filter",
+      "minSim": "Min. similarity:",
+      "fromPhoto": "From photo",
+      "manual": "Manual",
+      "pickPhoto": "Choose a photo from the gallery…",
+      "addColor": "+ Add color",
+      "useLum": "account for brightness",
+      "presetNamePh": "Palette name",
+      "emptyPresets": "No saved palettes",
+      "tagColor": "colors",
+      "tagSig": "signature",
+      "captureHint": "Click a photo in the gallery — it becomes the sample · Esc — cancel",
+      "captureCancelled": "Sample selection cancelled",
+      "sampleSet": "Palette sample: {name}",
+      "sampleMustBeImage": "The sample must be an image",
+      "needSample": "Choose a sample photo",
+      "maxColors": "Maximum 8 colors",
+      "needColor": "Add at least one color",
+      "saved": "Palette “{name}” saved",
+      "enterName": "Enter a palette name",
+      "broken": "Palette is corrupted",
+      "resetDone": "Palette filter reset",
+      "found": "Matched by palette: {n}",
+      "noImages": "No images",
+      "noSigs": "Could not collect signatures",
+      "sigs": "Signatures {i}/{n}",
+      "ranking": "Ranking…",
+      "prep": "Preparing…",
+      "cancelled": "Search cancelled",
+      "compareError": "Comparison error: {err}",
+      "sampleClearTt": "Reset sample",
+      "delColorTt": "Remove color",
+      "presetApplyTt": "Apply “{name}”",
+      "presetDelTt": "Delete"
+    },
+    "logs": {},
+    "settings": {
+      "title": "Settings",
+      "tabView": "View",
+      "tabOps": "Operations",
+      "tabDup": "Duplicates",
+      "tabData": "Data",
+      "language": "Language",
+      "languageSub": "Interface language; more can be imported from JSON",
+      "importLang": "Import translation",
+      "importLangSub": "Load a locale JSON file",
+      "importBtn": "Import…",
+      "exportTpl": "Export template",
+      "theme": "Theme",
+      "themeSub": "Dark or light",
+      "dark": "Dark",
+      "light": "Light",
+      "tileSize": "Thumbnail size",
+      "defSort": "Default sorting",
+      "palHover": "Palette panel on hover",
+      "palHoverSub": "Open the palette panel when the cursor touches the right screen edge",
+      "trash": "Trash",
+      "trashSub": "Deleting moves files into the _trash folder instead of permanent removal",
+      "autoNext": "Auto-advance in viewer",
+      "autoNextSub": "Automatically show the next photo after an operation",
+      "moveMode": "Move method",
+      "moveModeSub": "“Move” is a fast system operation. “Copy + delete” is the universal fallback",
+      "moveNative": "Move (native)",
+      "moveCopyDel": "Copy + delete",
+      "parallel": "Move parallelism",
+      "parallelSub": "Batch size for moving and deleting",
+      "defAlgo": "Default algorithm",
+      "algoHist": "Histogram",
+      "algoPoints": "Feature points",
+      "defThr": "Default threshold",
+      "logLimit": "Log entry limit",
+      "logLimitSub": "How many operations to keep (default 100)",
+      "export": "Export settings",
+      "exportSub": "Settings as a JSON file",
+      "exportBtn": "Export",
+      "import": "Import settings",
+      "importSub": "Load a previously saved JSON",
+      "importBtn2": "Import…",
+      "clearThumbs": "Clear preview cache",
+      "clearThumbsSub": "Thumbnails (IndexedDB)",
+      "clearLum": "Reset filter cache",
+      "clearLumSub": "Computed brightness values",
+      "clearSig": "Clear signature cache",
+      "clearSigSub": "Similar-duplicate and palette signatures",
+      "reset": "Reset settings",
+      "msgExported": "Settings exported",
+      "msgImported": "Settings imported",
+      "msgImportErr": "Import error: {err}",
+      "msgCacheT": "Clear preview cache?",
+      "msgCacheB": "All saved thumbnails will be removed from IndexedDB.",
+      "msgCacheDone": "Preview cache cleared",
+      "msgLumT": "Reset filter cache?",
+      "msgLumB": "Computed brightness values will be deleted.",
+      "msgLumDone": "Filter cache reset",
+      "msgSigT": "Clear signature cache?",
+      "msgSigB": "Similar-duplicate and palette signatures will be recomputed.",
+      "msgSigDone": "Signature cache cleared",
+      "msgResetT": "Reset settings?",
+      "msgResetB": "All settings will return to defaults.",
+      "msgResetDone": "Settings reset"
+    },
+    "sort": {
+      "name": "Name",
+      "date": "Date",
+      "size": "Size",
+      "res": "Resolution"
+    },
+    "msg": {
+      "folderOpened": "Folder “{name}” opened: {count} {files}",
+      "folderOpenFailed": "Could not open folder: {err}",
+      "noRecent": "Recent folder not found",
+      "accessDenied": "Access not granted",
+      "accessError": "Access error: {err}",
+      "folderReopened": "Folder “{name}” reopened",
+      "viewOnly": "View-only mode: {count} {files} (read-only)",
+      "refreshed": "Gallery refreshed: {count} {files}",
+      "refreshError": "Refresh error: {err}",
+      "changeFolderWait": "Wait for the current operations to finish",
+      "changeFolderT": "Change folder?",
+      "changeFolderB": "The queue has unfinished operations — they will be lost."
+    },
+    "help": {
+      "modalTitle": "Help",
+      "hero": "local gallery manager · Chrome / Edge · files never leave your computer",
+      "aboutT": "About",
+      "aboutP": "<b>Photo Archive</b> runs directly in the browser via the File System Access API and requires no installation. All file changes go into a queue first and are executed only after confirmation.",
+      "cards": [
+        [
+          "Gallery",
+          "File grid with filters, albums, selection and operations."
+        ],
+        [
+          "Duplicates",
+          "Exact (SHA-256) and similar (5 algorithms) with side-by-side comparison."
+        ],
+        [
+          "Palette",
+          "Pick photos by color composition — from a sample photo or manually."
+        ],
+        [
+          "Queue & plan",
+          "Execution with pause, cancel and an operation log."
+        ]
+      ],
+      "palT": "Palette search",
+      "palP": "Open the palette panel with <kbd>M</kbd> or the tab button at the right screen edge (in the gallery). Two ways to make a query: <b>“From photo”</b> — click any shot in the gallery; <b>“Manual”</b> — set colors and their shares. The palette works as a filter on top of the other gallery filters and sorts the result by similarity; the similarity percentage is shown in the top-left corner of tiles. Successful queries can be saved as presets. In Settings (View) you can enable opening the panel by hovering the right edge; in that mode a “pin” button appears so the panel stays open when the cursor leaves.",
+      "hkGalT": "Hotkeys — Gallery",
+      "hkGal": [
+        [
+          [
+            "Ctrl",
+            "A"
+          ],
+          "Select all visible files"
+        ],
+        [
+          [
+            "Shift"
+          ],
+          "click — range selection"
+        ],
+        [
+          [
+            "Delete"
+          ],
+          "Queue selected for deletion"
+        ],
+        [
+          [
+            "M"
+          ],
+          "Palette panel"
+        ],
+        [
+          [
+            "1",
+            "–",
+            "9"
+          ],
+          "Quick-move selection to an album"
+        ],
+        [
+          [
+            "0"
+          ],
+          "Move selection to root"
+        ],
+        [
+          [
+            "R"
+          ],
+          "Refresh gallery from disk"
+        ],
+        [
+          [
+            "/"
+          ],
+          "Focus search"
+        ],
+        [
+          [
+            "Ctrl",
+            "Z"
+          ],
+          "Undo last queue step"
+        ],
+        [
+          [
+            "Esc"
+          ],
+          "Clear selection / close panels"
+        ]
+      ],
+      "hkViewT": "Hotkeys — Viewer",
+      "hkView": [
+        [
+          [
+            "←",
+            "→"
+          ],
+          "Previous / next file"
+        ],
+        [
+          [
+            "Delete"
+          ],
+          " / ",
+          [
+            "↑"
+          ],
+          "Delete current file (to queue)"
+        ],
+        [
+          [
+            "1",
+            "–",
+            "9"
+          ],
+          [
+            "0"
+          ],
+          "Quick move to album / root"
+        ],
+        [
+          [
+            "Mouse wheel"
+          ],
+          "Zoom at cursor"
+        ],
+        [
+          [
+            "+",
+            "−"
+          ],
+          "Zoom from center"
+        ],
+        [
+          [
+            "Double click"
+          ],
+          "Zoom / reset zoom"
+        ],
+        [
+          [
+            "Click name"
+          ],
+          "Rename (Enter — to queue, Esc — cancel)"
+        ],
+        [
+          [
+            "Esc"
+          ],
+          "Close viewer"
+        ]
+      ],
+      "hkDupT": "Hotkeys — Duplicates",
+      "hkDup": [
+        [
+          [
+            "←",
+            "→"
+          ],
+          "Files within a group"
+        ],
+        [
+          [
+            "↑",
+            "↓"
+          ],
+          "Switch groups"
+        ],
+        [
+          [
+            "C"
+          ],
+          "Comparison mode (two photos side by side)"
+        ],
+        [
+          [
+            "Esc"
+          ],
+          "Close viewer"
+        ]
+      ],
+      "cmpNote": "Clicking a photo in a group automatically enables comparison. In comparison mode the ◀ ▶ buttons browse files, zoom is synchronized for both photos.",
+      "queueT": "Queue & execution plan",
+      "queueP": "All actions go into the queue. The plan panel in the sidebar shows operations and execution progress. While running, pause, resume and cancel are available.",
+      "filtersT": "Filters & presets",
+      "filtersP": "“Filters ▾” — advanced filters: type, aspect ratio, brightness, resolution. “Presets” save a combination of filters. Pinned presets appear in a separate panel.",
+      "albumsT": "Albums",
+      "albumsP": "Albums are subfolders of the root directory. “＋ New album…” creates an album (clicking the arrow creates it and immediately moves the selected files). “Manage albums”: create, rename, disable, delete.",
+      "setT": "Settings & caching",
+      "setItems": [
+        [
+          "Move method",
+          "“Move (native)” or “Copy + delete”."
+        ],
+        [
+          "Move parallelism",
+          "batch size (4–32)."
+        ],
+        [
+          "Trash",
+          "deletion moves files into the _trash subfolder."
+        ],
+        [
+          "Data",
+          "clear caches, export/import settings."
+        ]
+      ]
+    },
+    "p": {
+      "files": {
+        "one": "file",
+        "other": "files"
+      },
+      "ops": {
+        "one": "operation",
+        "other": "operations"
+      },
+      "records": {
+        "one": "entry",
+        "other": "entries"
+      },
+      "groups": {
+        "one": "group",
+        "other": "groups"
+      },
+      "images": {
+        "one": "image",
+        "other": "images"
+      },
+      "bits": {
+        "one": "bit",
+        "other": "bits"
+      },
+      "points": {
+        "one": "point",
+        "other": "points"
+      },
+      "albums": {
+        "one": "album",
+        "other": "albums"
+      }
+    }
+  }
+}
