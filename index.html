@@ -1623,7 +1623,7 @@ filter:{album:"__all__",exts:new Set(),q:"",sizeMin:"",sizeMax:""},
 adv:{kind:"all",shape:{preset:"any",cmp:"eq",cw:"",ch:""},lumMin:"",lumMax:"",
 resW:{cmp:"gte",val:""},resH:{cmp:"gte",val:""}},
 sort:{key:settings.sort,dir:1},
-mode:"gallery",
+mode:"none",
 dup:{type:"exact",running:false,cancel:false,groups:[]},
 pal:{src:"photo",refId:null,colors:[{hex:"#e8a33c",w:40},{hex:"#3c78e8",w:35},{hex:"#20242c",w:25}],
 thr:55,useLum:true,qvec:null,simById:new Map(),allRank:[],active:false,running:false,cancel:false},
@@ -4550,7 +4550,7 @@ return colorsToVec(S.pal.colors);
 }
 }
 function palDrawerOpen(){return $("#palDrawer").classList.contains("show");}
-function openPalDrawer(){if(!S.root) return;$("#palDrawer").classList.add("show");$("#palTab").style.display="none";updatePalPinBtn();}
+function openPalDrawer(){if(!S.mode==="gallery") return;$("#palDrawer").classList.add("show");$("#palTab").style.display="none";updatePalPinBtn();}
 function closePalDrawer(){$("#palDrawer").classList.remove("show");palPinned=false;updatePalPinBtn();if(S.mode==="gallery")$("#palTab").style.display="flex";}
 function togglePalDrawer(){palDrawerOpen()?closePalDrawer():openPalDrawer();}
 function updatePalTab(){const tb=$("#palTab");if(tb)tb.classList.toggle("active",S.pal.active);}
